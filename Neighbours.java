@@ -14,7 +14,12 @@ import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 import static java.lang.System.*;
 
-//HEJ DET ÄR PAINT IGEN
+<<<<<<< HEAD
+//HEJ DET ÄR PAINT IGEN!!!!
+=======
+//HEJ DET ï¿½R PAINT
+//Jag har en Diggus Bickus
+>>>>>>> ff879cebf9c4e83375f70b13928b6752c4f1f208
 /*
  *  Program to simulate segregation.
  *  See : http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
