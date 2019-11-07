@@ -1,0 +1,109 @@
+=== Laboration 1, del 1/2 ===
+
+Läs labbkriterierna längst ner på sidan innan ni fortsätter!
+
+I denna laborationsuppgift är tanken att ni ska lära er att använda koncept som
+arv, gränssnitt, metod-overloading (överlagring) och metod-overriding (skuggning)
+tillsammans med Java.
+
+Se till att noga läsa igenom instruktionerna och att följa de regler och krav
+som labbdokumentet föreskriver. Börja med att kolla igenom hela labbdokumentet
+och se vad som krävs för att få godkänt, samt med att ladda ner de filer som
+behövs.
+
+I första deluppgiften bekantar vi oss med den givna Java-koden, samt skapar ny kod.
+Därefter bygger varje deluppgift på den tidigare lösningen. Koden som skrivs och
+godkänns i denna labb kommer senare att användas i Laboration 2.
+
+== Uppgift a) - Arv och gränssnitt ==
+
+Börja med att klona repot https://github.com/niklasbroberg/DIT953-lab1 och kika
+lite i det. För närvarande finns det två Java-filer, Volvo240.java och Saab95.java.
+Just nu verkar klasserna ha ganska mycket gemensamt, eftersom båda representerar
+bilar.
+
+- Skapa en arvshierarki där Volvo240 och Saab95 ingår som eliminerar all
+kod-duplicering och i görligaste mån följer open-closed-principen. Gör dessa
+ändringar utan att ändra på klassernas funktionalitet.
+
+- I originalfilerna är alla metoder och variabler public, vilket exponerar allt
+till användaren. Ändra synligheten på de metoder och variabler som användaren inte
+behöver se eller känna till.
+
+Se till att alla filer kompilerar och fortsätt till nästa uppgift.
+
+== Uppgift b) ==
+
+I denna uppgift fortsätter vi bygga på föregående genom att vi nu också
+implementerar ett interface kallat Movable.
+
+- Skapa en fil Movable.java och ge interfacet följande metoder:
+    void move();
+    void turnLeft();
+    void turnRight();
+
+- Se till att era bilar implementerar interfacet Movable, med någon lämplig
+intern representation av deras riktning och position. Metoden move ska fungera
+så att beroende på riktning ökas (eller minskas) bilens x- eller y-koordinat
+med dess currentSpeed.
+
+== Uppgift c) ==
+
+Dokumentation och testning är viktigt när man designar program.
+
+- Använd Javadoc för att kommentera samtliga klasser och interfaces. Ni bör ha
+100% comment/Javadoc coverage för era filer. Använd funktioner som finns i
+IntelliJ för att uppnå detta.
+
+Det finns mycket information om Javadoc på nätet om ni behöver ta fram det.
+
+När ni är klara bör ni kunna få ut lämpliga API-dokument för ert program som
+HTML-filer.
+
+== Uppgift d) ==
+
+- Använda JUnit för att skriva tester med 100% coverage för era bilklasser.
+
+Även JUnit har mycket information på nätet som ni kan leta upp. Tänk på att era
+tester inte behöver testa "allt"; det viktiga är att ni bekantar er med JUnit
+och förstår hur det fungerar.
+
+Därför behöver ni INTE skriva kodkontrakt för era metoder. Det räcker med att ni
+skriver testmetoder som testar metodernas funktionalitet med hjälp av
+assert/equals osv. Därefter testar ni så att alla JUnit-tester går igenom med
+"Run with coverage".
+
+== Uppgift e) ==
+
+Bilklassernas metoder har för närvarande inget sätt att kontrollera hur mycket
+farten kan öka eller sänkas. Skriv om metoder (och dokumentation) så att:
+
+- gas() och break() bara accepterar värden i intervallet [0,1],
+
+- currentSpeed alltid ligger i intervallet [0,enginePower],
+
+- Anrop till gas() inte kan resultera i att farten sänks, och
+
+- Anrop till break() inte kan resultera i att farten höjs.
+
+
+== Extra uppgifter för mer utmaning ==
+
+- Lägg till ytterligare bilar till er arvs-hierarki.
+- Lägg till en enkel command line controller genom vilken ni kan skapa bilar;
+  gasa och bromsa bilar; avgöra var bilarna befinner sig; etc.
+
+== Krav för godkänt på redovisning ==
+Alla gruppmedlemmar skall ha skrivit på koden och känna till hela arbetet individuellt
+Alla uppgifter ska vara lösta vid redovisningen.
+Lösningen skall gå att kompilera och köra!
+
+
+== Labbkriterier ==
+- Det är absolut förbjudet att dela, kopiera eller använda kod från varandra på
+något sätt. Det är däremot accepterat att diskutera uppgifter och lösningar sinsemellan.
+
+- För att få godkänt på labben gör ni muntliga redovisningar. Gruppen gör detta
+samtidigt: alla gruppmedlemmar kommer ställas frågor var och en för sig. För att
+gruppen ska bli godkänd ska alla gruppmedlemmar kunna svara på frågor.
+Så se till att ni hänger med i laborationen; fråga om hjälp ifall ni fastnar.
