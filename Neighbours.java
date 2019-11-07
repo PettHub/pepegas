@@ -14,7 +14,7 @@ import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 import static java.lang.System.*;
 
-
+//huehuehueue
 /*
  *  Program to simulate segregation.
  *  See : http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
