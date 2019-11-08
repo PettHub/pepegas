@@ -13,6 +13,13 @@ public class Saab95 implements Movable extends Car{
         stopEngine();
     }
 
+
+    //Mina grejer
+    private double x;
+    private double y;
+    private int direction;
+
+
     public void setTurboOn(){
 	    turboOn = true;
     }
