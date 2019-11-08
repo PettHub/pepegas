@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Saab95 implements Movable extends Car{
+public class Saab95 extends Car implements Movable{
 
     public boolean turboOn;
     
@@ -13,21 +13,31 @@ public class Saab95 implements Movable extends Car{
         stopEngine();
     }
 
-
     //Mina grejer
     private double x;
     private double y;
-    private int direction;
+    private double dx;
+    private double dy;
+    private double direction = 270;
+
+    private void setDxDy(){
+        dx = Math.cos(direction)*currentSpeed;
+        dy = Math.sin(direction)*currentSpeed;
+    }
 
     public void move(){
-        x = (x + getCurrentSpeed())*direction;
-        y = (y + getCurrentSpeed())*direction;
+    //currentSpeed = Math.sqrt(dy*dy + dx*dx);
+        x += dx;
+        y += dy;
     }
-    public void turnLeft(){
-        x =
+    public void changeDirection(int degreeChange){
+        direction += degreeChange;
     }
-    public void turnRight(){
-        
+    public void turnLeft(){ //Todo change direction after input
+        changeDirection(20);
+    }
+    public void turnRight(){ //Todo change direction after input
+        changeDirection(-20);
     }
 
 

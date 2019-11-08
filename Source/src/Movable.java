@@ -1,7 +1,7 @@
-interface Movable(){
-    public void move();
-    public void turnLeft();
-    public void turnRight();
-    private void incrementSpeed(double amount);
-    private void decramentSpeed(double amount);
+interface Movable{
+    void move();
+    void turnLeft();
+    void turnRight();
+    void incrementSpeed(double amount);
+    void decramentSpeed(double amount);
 }
