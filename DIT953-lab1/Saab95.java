@@ -19,6 +19,16 @@ public class Saab95 extends Car{
     private double y;
     private int direction;
 
+    public void move(){
+
+    }
+    public void turnLeft(){
+
+    }
+    public void turnRight(){
+        
+    }
+
 
     public void setTurboOn(){
 	    turboOn = true;
