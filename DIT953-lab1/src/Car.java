@@ -7,14 +7,14 @@ public abstract class Car {
     public Color color; // Color of the car
     public String modelName; // The car model name
 
-    public int getNrDoors(){
+    private  int getNrDoors(){
         return nrDoors;
     }
-    public double getEnginePower(){
+    private double getEnginePower(){
         return enginePower;
     }
 
-    public double getCurrentSpeed(){
+    private double getCurrentSpeed(){
         return currentSpeed;
     }
 
@@ -22,7 +22,7 @@ public abstract class Car {
         return color;
     }
 
-    public void setColor(Color clr){
+    private void setColor(Color clr){
         color = clr;
     }
 
@@ -33,5 +33,17 @@ public abstract class Car {
     public void stopEngine(){
         currentSpeed = 0;
     }
+    private double speedFactor(){
+    return enginePower * 0.01 * trimFactor;
+    }
 
+    // TODO fix this method according to lab pm
+    public void gas(double amount){
+        incrementSpeed(amount);
+    }
+
+    // TODO fix this method according to lab pm
+    public void brake(double amount){
+        decrementSpeed(amount);
+    }
 }
