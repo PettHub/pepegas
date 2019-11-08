@@ -20,10 +20,11 @@ public class Saab95 extends Car{
     private int direction;
 
     public void move(){
-
+        x = (x + getCurrentSpeed())*direction;
+        y = (y + getCurrentSpeed())*direction;
     }
     public void turnLeft(){
-
+        x =
     }
     public void turnRight(){
         
