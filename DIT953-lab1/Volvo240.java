@@ -11,6 +11,9 @@ public class Volvo240 implements Movable extends Car {
         modelName = "Volvo240";
         stopEngine();
     }
+    private double x;
+    private double y;
+    private int direction;
     
 
     private void incrementSpeed(double amount){
