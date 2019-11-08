@@ -1,15 +1,15 @@
 import java.awt.*;
 
-public class Saab95 implements Movable extends Car{
+public class Saab95 extends Car implements Movable {
 
-    public boolean turboOn;
-    
-    public Saab95(){
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
-	    turboOn = false;
-        modelName = "Saab95";
+    private boolean turboOn;
+
+    public Saab95() {
+        this.setNrDoors(2);
+        this.setColor(Color.red);
+        this.setEnginePower(125);
+        this.turboOn = false;
+        this.modelName = "Saab95";
         stopEngine();
     }
 
@@ -19,27 +19,42 @@ public class Saab95 implements Movable extends Car{
     private double y;
     private int direction;
 
-
-    public void setTurboOn(){
-	    turboOn = true;
+    public void setTurboOn() {
+        turboOn = true;
     }
 
-    public void setTurboOff(){
-	    turboOn = false;
+    public void setTurboOff() {
+        turboOn = false;
     }
+
     @Override
-    public double speedFactor(){
+    public double speedFactor() {
         double turbo = 1;
-        if(turboOn) turbo = 1.3;
-        return enginePower * 0.01 * turbo;
+        if (turboOn) turbo = 1.3;
+        return this.getEnginePower() * 0.01 * turbo;
     }
 
-    public void incrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+    public void incrementSpeed(double amount) {
+        this.setCurrentSpeed(getCurrentSpeed() + speedFactor() * amount);
     }
 
-    public void decrementSpeed(double amount){
-        currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+    @Override
+    public void decrementSpeed(double amount) {
+        this.setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
     }
-    
+
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void turnLeft() {
+
+    }
+
+    @Override
+    public void turnRight() {
+
+    }
 }
