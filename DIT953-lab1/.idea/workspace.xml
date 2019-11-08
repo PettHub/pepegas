@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3794a339-4112-4db1-89e0-1de0562fe2de" name="Default Changelist" comment="" />
+    <list default="true" id="a9e3dee6-8761-4d9a-b7d7-e912d5d813e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DIT953-lab1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,10 +16,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1TKXKCGWEvEf6ZpcYrSIbcsfFXJ" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Deltagare\Documents\git\pepegas\DIT953-lab1\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TI0URGJ3cNOf358kdyVuvIWVB4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Source" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -33,11 +45,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c5f34408-0890-4feb-b8b4-af7c2e31b909" name="Default Changelist" comment="" />
-      <created>1573209694805</created>
+      <changelist id="a9e3dee6-8761-4d9a-b7d7-e912d5d813e2" name="Default Changelist" comment="" />
+      <created>1573132317166</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573209694805</updated>
+      <updated>1573132317166</updated>
     </task>
     <servers />
   </component>

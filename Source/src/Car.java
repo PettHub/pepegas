@@ -25,9 +25,11 @@ public abstract class Car {
         return enginePower;
     }
 
+<<<<<<< HEAD
     public void setCurrentSpeed(double speed){currentSpeed = speed;}
 
     public double getCurrentSpeed() {
+>>>>>>> 33bd5549dc7a37e6c92d65e901a951e27e1c3855
         return currentSpeed;
     }
 
