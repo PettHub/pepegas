@@ -9,6 +9,33 @@ public abstract class Car {
     private Color color; // Color of the car
     public String modelName; // The car model name
 
+    //Uppgift b START
+    private double x;
+    private double y;
+    private double dx;
+    private double dy;
+    private double direction = 270;
+
+    private void setDxDy(){
+        dx = Math.cos(direction)*getCurrentSpeed();
+        dy = Math.sin(direction)*getCurrentSpeed();
+    }
+
+    public void move(){
+        //currentSpeed = Math.sqrt(dy*dy + dx*dx);
+        x += dx;
+        y += dy;
+    }
+    public void changeDirection(int degreeChange){
+        direction += degreeChange;
+    }
+    public void turnLeft(){ //changes direction after input
+        changeDirection(20);
+    }
+    public void turnRight(){ //changes direction after input
+        changeDirection(-20);
+    }//Uppgift b SLUT
+
     public void setNrDoors(int nrDoors) {
         this.nrDoors = nrDoors;
     }

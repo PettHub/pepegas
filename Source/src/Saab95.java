@@ -13,33 +13,6 @@ public class Saab95 extends Car implements Movable {
         stopEngine();
     }
 
-    //Mina grejer
-    private double x;
-    private double y;
-    private double dx;
-    private double dy;
-    private double direction = 270;
-
-    private void setDxDy(){
-        dx = Math.cos(direction)*getCurrentSpeed();
-        dy = Math.sin(direction)*getCurrentSpeed();
-    }
-
-    public void move(){
-    //currentSpeed = Math.sqrt(dy*dy + dx*dx);
-        x += dx;
-        y += dy;
-    }
-    public void changeDirection(int degreeChange){
-        direction += degreeChange;
-    }
-    public void turnLeft(){ //Todo change direction after input
-        changeDirection(20);
-    }
-    public void turnRight(){ //Todo change direction after input
-        changeDirection(-20);
-    }
-
     public void setTurboOn() {
         turboOn = true;
     }
