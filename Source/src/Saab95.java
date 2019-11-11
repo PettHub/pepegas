@@ -1,6 +1,5 @@
 import java.awt.*;
 
-<<<<<<< HEAD
 public class Saab95 extends Car implements Movable {
 
     private boolean turboOn;
@@ -11,7 +10,6 @@ public class Saab95 extends Car implements Movable {
         this.setEnginePower(125);
         this.turboOn = false;
         this.modelName = "Saab95";
->>>>>>> 33bd5549dc7a37e6c92d65e901a951e27e1c3855
         stopEngine();
     }
 
@@ -23,8 +21,8 @@ public class Saab95 extends Car implements Movable {
     private double direction = 270;
 
     private void setDxDy(){
-        dx = Math.cos(direction)*currentSpeed;
-        dy = Math.sin(direction)*currentSpeed;
+        dx = Math.cos(direction)*getCurrentSpeed();
+        dy = Math.sin(direction)*getCurrentSpeed();
     }
 
     public void move(){
@@ -64,20 +62,5 @@ public class Saab95 extends Car implements Movable {
     @Override
     public void decrementSpeed(double amount) {
         this.setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
-    }
-
-    @Override
-    public void move() {
-
-    }
-
-    @Override
-    public void turnLeft() {
-
-    }
-
-    @Override
-    public void turnRight() {
-
     }
 }
