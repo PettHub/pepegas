@@ -1,5 +1,14 @@
 import java.awt.*;
 
+/**
+ * A class for a Volvo 240 car, inherits from the class Car. Nearly identical to the Saab95 class.
+ *
+ * Contains a method to calculate the speed factor
+ * and two methods which both use the speed factor to either increase or decrease the speed.
+ * @pepegas
+ */
+
+
 public class Volvo240 extends Car implements Movable {
 
     public final static double trimFactor = 1.25;
@@ -12,10 +21,6 @@ public class Volvo240 extends Car implements Movable {
         stopEngine();
     }
 
-    private double x;
-    private double y;
-    private int direction;
-
     @Override
     public void incrementSpeed(double amount) {
         this.setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
@@ -25,7 +30,7 @@ public class Volvo240 extends Car implements Movable {
     public void decrementSpeed(double amount) {
         this.setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
     }
-
+/*
     @Override
     public void move() {
     }
@@ -34,5 +39,5 @@ public class Volvo240 extends Car implements Movable {
     }
     @Override
     public void turnRight() {
-    }
+    }*/
 }
