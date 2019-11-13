@@ -1,11 +1,10 @@
 import java.awt.*;
 
 /**
- * A class for a Volvo 240 car, inherits from the class Car. Nearly identical to the Saab95 class.
+ * A class for a Volvo 240 car, inherits from the Car class. Doesn't override anything, as the Car class' methods are based on this.
  *
- * Contains a method to calculate the speed factor
- * and two methods which both use the speed factor to either increase or decrease the speed.
- * @pepegas
+ *
+ * @author pepegas
  */
 
 

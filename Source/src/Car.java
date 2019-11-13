@@ -1,5 +1,13 @@
 import java.awt.*;
 
+/**
+ * A class for Car.
+ *
+ * Contains necessary methods to make a car move (speed up, slow down, turn). Assumes "forward" is up.
+ *
+ * @author pepegas
+ */
+
 public abstract class Car {
 
     private final static double trimFactor = 1.25;
@@ -8,7 +16,6 @@ public abstract class Car {
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     public String modelName; // The car model name
-
     //Uppgift b START
     private double x;
     private double y;
@@ -16,25 +23,54 @@ public abstract class Car {
     private double dy;
     private double direction = 270;
 
+    /**
+     * Method setDxDy sets the speed for x and y
+     * @author Toast
+     */
+
     private void setDxDy(){
         dx = Math.cos(direction)*getCurrentSpeed();
         dy = Math.sin(direction)*getCurrentSpeed();
     }
+
+    /**
+     * Method move uses the speeds for x and y to change the car's coordinates
+     * @author Toast
+     */
 
     public void move(){
         //currentSpeed = Math.sqrt(dy*dy + dx*dx);
         x += dx;
         y += dy;
     }
+
+    /**
+     * Increases or decreases direction based on input
+     * @param degreeChange
+     * @author pepegas
+     */
     public void changeDirection(int degreeChange){
         direction += degreeChange;
     }
+
+    /**
+     * If turnLeft is activated, this method will change the car's direction to the left
+     * @author pepegas
+     */
     public void turnLeft(){ //changes direction after input
         changeDirection(20);
     }
+
+    /**
+     * If turnRight is activated, this method will change the car's direction to the right
+     * @author pepegas
+     */
     public void turnRight(){ //changes direction after input
         changeDirection(-20);
     }//Uppgift b SLUT
+
+
+    //Start setters and getters
 
     public void setNrDoors(int nrDoors) {
         this.nrDoors = nrDoors;
@@ -86,19 +122,6 @@ public abstract class Car {
         incrementSpeed(changeSpeed(amount));
         if(currentSpeed < tmpSpeed){currentSpeed = tmpSpeed; System.out.println("speed was not changed");}
         if (currentSpeed >= enginePower) { currentSpeed = enginePower;}
-
-        /*if (isBetweenZeroAndOne(amount) && currentSpeed < enginePower) {
-            double tmpSpeed = currentSpeed;
-            incrementSpeed(amount);
-            if(currentSpeed < tmpSpeed){
-                currentSpeed = tmpSpeed;
-            }
-
-        } else if (isBetweenZeroAndOne(amount) && currentSpeed >= enginePower) {
-            currentSpeed = enginePower;
-        } else {
-            System.out.println("gas() parameter out of range ");
-        }*/
     }
 
     // TODO fix this method according to lab pm
