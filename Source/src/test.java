@@ -7,7 +7,7 @@ class test {
     }
 
     @org.junit.jupiter.api.Test
-    void stopEngine() {
+    void stopEngine() throws Exception {
     }
 
     @org.junit.jupiter.api.Test
