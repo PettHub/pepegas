@@ -52,7 +52,9 @@ public abstract class Car {
         return enginePower;
     }
 
-    public void setCurrentSpeed(double speed){currentSpeed = speed;}
+    public void setCurrentSpeed(double speed) {
+        currentSpeed = speed;
+    }
 
     public double getCurrentSpeed() {
         return currentSpeed;
@@ -80,12 +82,42 @@ public abstract class Car {
 
     // TODO fix this method according to lab pm
     public void gas(double amount) {
-        incrementSpeed(amount);
+        double tmpSpeed = currentSpeed;
+        incrementSpeed(changeSpeed(amount));
+        if(currentSpeed < tmpSpeed){currentSpeed = tmpSpeed; System.out.println("speed was not changed");}
+        if (currentSpeed >= enginePower) { currentSpeed = enginePower;}
+
+        /*if (isBetweenZeroAndOne(amount) && currentSpeed < enginePower) {
+            double tmpSpeed = currentSpeed;
+            incrementSpeed(amount);
+            if(currentSpeed < tmpSpeed){
+                currentSpeed = tmpSpeed;
+            }
+
+        } else if (isBetweenZeroAndOne(amount) && currentSpeed >= enginePower) {
+            currentSpeed = enginePower;
+        } else {
+            System.out.println("gas() parameter out of range ");
+        }*/
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount) {
-        decrementSpeed(amount);
+        double tmpSpeed = currentSpeed;
+        decrementSpeed(changeSpeed(amount));
+        if(currentSpeed > tmpSpeed){
+            currentSpeed = tmpSpeed;
+            System.out.println("speed was not changed");
+        }
+    }
+
+    private double changeSpeed(double amount){
+        if (amount <= 1 && amount >= 0)
+            return amount;
+        else {
+            System.out.println("parameter out of range");
+            return 0;
+        }
     }
 
     private void incrementSpeed(double amount) {
