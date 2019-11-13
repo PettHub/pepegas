@@ -143,11 +143,11 @@ public abstract class Car {
         }
     }
 
-    private void incrementSpeed(double amount) {
+    public void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
     }
 
-    private void decrementSpeed(double amount) {
+    public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 }
