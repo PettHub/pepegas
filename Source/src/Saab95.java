@@ -5,7 +5,7 @@ import java.awt.*;
  *
  * Contains a constructor and methods to turn turbo off and on, a method to calculate the speed factor
  * and two methods which both use the speed factor to either increase or decrease the speed.
- * @pepegas
+ * @author pepegas
  */
 
 public class Saab95 extends Car implements Movable {
