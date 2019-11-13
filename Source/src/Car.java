@@ -69,8 +69,7 @@ public abstract class Car {
         changeDirection(-20);
     }//Uppgift b SLUT
 
-
-    //Start setters and getters
+    //Start getters & setters
 
     public void setNrDoors(int nrDoors) {
         this.nrDoors = nrDoors;
@@ -104,19 +103,36 @@ public abstract class Car {
         color = clr;
     }
 
+    //End getters and setters
+
+    /**
+     * Starts the engine by setting currentSpeed to 0.1
+     */
+
     public void startEngine() {
         currentSpeed = 0.1;
     }
+
+    /**
+     * Stops the engine by setting currentSpeed to 0
+     */
 
     public void stopEngine() {
         currentSpeed = 0;
     }
 
+    /**
+     * Sets the speedFactor
+     */
     public double speedFactor() {
         return enginePower * 0.01 * trimFactor;
     }
 
-    // TODO fix this method according to lab pm
+    /**
+     * Makes car speed up if gas is used
+     * @param amount
+     * @author Toast and Oliver
+     */
     public void gas(double amount) {
         double tmpSpeed = currentSpeed;
         incrementSpeed(changeSpeed(amount));
@@ -124,7 +140,11 @@ public abstract class Car {
         if (currentSpeed >= enginePower) { currentSpeed = enginePower;}
     }
 
-    // TODO fix this method according to lab pm
+    /**
+     * Makes car slow down if brake is used
+     * @param amount
+     * @author Toast and Oliver
+     */
     public void brake(double amount) {
         double tmpSpeed = currentSpeed;
         decrementSpeed(changeSpeed(amount));
@@ -134,6 +154,12 @@ public abstract class Car {
         }
     }
 
+
+    /**
+     * Checks if the amount is between 0 and 1
+     * @param amount
+     * @author pepegas
+     */
     private double changeSpeed(double amount){
         if (amount <= 1 && amount >= 0)
             return amount;
@@ -143,10 +169,20 @@ public abstract class Car {
         }
     }
 
+    /**
+     * increases speed
+     * @param amount
+     * @author pepegas
+     */
     public void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
     }
 
+    /**
+     * decreases speed
+     * @param amount
+     * @author pepegas
+     */
     public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
