@@ -20,7 +20,7 @@ public class Volvo240 extends Car implements Movable {
         modelName = "Volvo240";
         stopEngine();
     }
-
+/*
     @Override
     public void incrementSpeed(double amount) {
         this.setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount, getEnginePower()));
@@ -30,7 +30,7 @@ public class Volvo240 extends Car implements Movable {
     public void decrementSpeed(double amount) {
         this.setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount, 0));
     }
-/*
+    /*
     @Override
     public void move() {
     }
