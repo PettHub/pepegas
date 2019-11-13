@@ -57,11 +57,8 @@ public abstract class Car {
     public void gas(double amount) {
         double tmpSpeed = currentSpeed;
         incrementSpeed(changeSpeed(amount));
-        if(currentSpeed < tmpSpeed){
-            currentSpeed = tmpSpeed;
-            System.out.println("speed was not changed");}
-        if (currentSpeed >= enginePower) {
-            currentSpeed = enginePower;}
+        if(currentSpeed < tmpSpeed){currentSpeed = tmpSpeed; System.out.println("speed was not changed");}
+        if (currentSpeed >= enginePower) { currentSpeed = enginePower;}
 
         /*if (isBetweenZeroAndOne(amount) && currentSpeed < enginePower) {
             double tmpSpeed = currentSpeed;
