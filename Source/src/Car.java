@@ -23,12 +23,16 @@ public abstract class Car {
     private double dy;
     private double direction = 270;
 
+    public double getDirection() {
+        return direction;
+    }
+
     /**
      * Method setDxDy sets the speed for x and y
      * @author Toast
      */
 
-    private void setDxDy(){
+    public void setDxDy(){
         dx = Math.cos(direction)*getCurrentSpeed();
         dy = Math.sin(direction)*getCurrentSpeed();
     }
@@ -152,6 +156,8 @@ public abstract class Car {
             currentSpeed = tmpSpeed;
             System.out.println("speed was not changed");
         }
+        if (currentSpeed<0)
+            currentSpeed=0;
     }
 
 
@@ -185,5 +191,21 @@ public abstract class Car {
      */
     public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 }

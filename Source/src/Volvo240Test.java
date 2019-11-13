@@ -1,92 +1,35 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class Volvo240Test {
 
-    @BeforeEach
-    void setUp() {
-    }
+    @Test
+    void move() throws Exception{
 
-    @AfterEach
-    void tearDown() {
     }
 
     @Test
-    void move() {
+    void turnLeft() throws Exception{
     }
 
     @Test
-    void changeDirection() {
+    void turnRight() throws Exception{
     }
 
     @Test
-    void turnLeft() {
+    void startEngine() throws Exception{
     }
 
     @Test
-    void turnRight() {
+    void stopEngine() throws Exception{
     }
 
     @Test
-    void setNrDoors() {
+    void gas() throws Exception{
     }
 
     @Test
-    void setEnginePower() {
-    }
-
-    @Test
-    void getNrDoors() {
-    }
-
-    @Test
-    void getEnginePower() {
-    }
-
-    @Test
-    void setCurrentSpeed() {
-    }
-
-    @Test
-    void getCurrentSpeed() {
-    }
-
-    @Test
-    void getColor() {
-    }
-
-    @Test
-    void setColor() {
-    }
-
-    @Test
-    void startEngine() {
-    }
-
-    @Test
-    void stopEngine() {
-    }
-
-    @Test
-    void speedFactor() {
-    }
-
-    @Test
-    void gas() {
-    }
-
-    @Test
-    void brake() {
-    }
-
-    @Test
-    void incrementSpeed() {
-    }
-
-    @Test
-    void decrementSpeed() {
+    void brake() throws Exception{
     }
 }
