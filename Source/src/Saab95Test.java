@@ -6,6 +6,8 @@ class Saab95Test {
     Saab95 bil = new Saab95();
     @Test
     void startEngine() throws Exception{
+        bil.startEngine();
+        assertEquals(bil.getCurrentSpeed(), 0.1);
     }
 
     @Test
@@ -40,10 +42,13 @@ class Saab95Test {
 
     @Test
     void move() throws Exception{
-        bil.startEngine();
-        bil.move();
         assertEquals(bil.getX(), 0.0);
-        assertEquals(bil.getY(), -0.1);
+        assertEquals(bil.getY(), 0.0);
+        bil.startEngine();
+        bil.turnLeft();
+        bil.move();
+        assertNotEquals(bil.getX(), 0.0);
+        assertNotEquals(bil.getY(), 0.0);
     }
 
     @Test

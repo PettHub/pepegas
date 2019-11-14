@@ -32,7 +32,7 @@ public abstract class Car {
      * @author Toast
      */
 
-    public void setDxDy(){
+    private void setDxDy(){
         dx = Math.cos(direction)*getCurrentSpeed();
         dy = Math.sin(direction)*getCurrentSpeed();
     }
@@ -54,7 +54,7 @@ public abstract class Car {
      * @param degreeChange
      * @author pepegas
      */
-    public void changeDirection(double degreeChange){
+    private void changeDirection(double degreeChange){
         direction += degreeChange;
     }
 
@@ -167,8 +167,12 @@ public abstract class Car {
      * @param amount
      * @author pepegas
      */
+    private boolean isBetween0And1(double amount){
+        return (amount <= 1 && amount >= 0);
+    }
+
     private double changeSpeed(double amount){
-        if (amount <= 1 && amount >= 0)
+        if (isBetween0And1(amount))
             return amount;
         else {
             System.out.println("parameter out of range");
@@ -181,7 +185,7 @@ public abstract class Car {
      * @param amount
      * @author pepegas
      */
-    public void incrementSpeed(double amount) {
+    private void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
     }
 
@@ -190,7 +194,7 @@ public abstract class Car {
      * @param amount
      * @author pepegas
      */
-    public void decrementSpeed(double amount) {
+    private void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 
