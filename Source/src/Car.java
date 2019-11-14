@@ -21,7 +21,7 @@ public abstract class Car {
     private double y;
     private double dx;
     private double dy;
-    private double direction = 270;
+    private double direction = Math.PI*1.5;
 
     public double getDirection() {
         return direction;
@@ -44,6 +44,7 @@ public abstract class Car {
 
     public void move(){
         //currentSpeed = Math.sqrt(dy*dy + dx*dx);
+        setDxDy();
         x += dx;
         y += dy;
     }
@@ -53,7 +54,7 @@ public abstract class Car {
      * @param degreeChange
      * @author pepegas
      */
-    public void changeDirection(int degreeChange){
+    public void changeDirection(double degreeChange){
         direction += degreeChange;
     }
 
@@ -62,7 +63,7 @@ public abstract class Car {
      * @author pepegas
      */
     public void turnLeft(){ //changes direction after input
-        changeDirection(20);
+        changeDirection(Math.PI*20/360);
     }
 
     /**
@@ -70,7 +71,7 @@ public abstract class Car {
      * @author pepegas
      */
     public void turnRight(){ //changes direction after input
-        changeDirection(-20);
+        changeDirection(-Math.PI*20/360);
     }//Uppgift b SLUT
 
     //Start getters & setters

@@ -35,22 +35,21 @@ class Saab95Test {
     @Test
     void turnLeft() throws Exception{
         bil.turnLeft();
-        assertEquals(bil.getDirection(), 290);
+        assertEquals(bil.getDirection(), Math.PI*1.5+Math.PI*20.0/360);
     }
 
     @Test
     void move() throws Exception{
         bil.startEngine();
-        bil.setDxDy();
         bil.move();
-        assertEquals(bil.getX(), 0);
-        assertNotEquals(bil.getY(), 0.0);
+        assertEquals(bil.getX(), 0.0);
+        assertEquals(bil.getY(), -0.1);
     }
 
     @Test
     void turnRight() throws Exception{
         bil.turnRight();
-        assertEquals(bil.getDirection(), 250);
+        assertEquals(bil.getDirection(), Math.PI*1.5-Math.PI*20.0/360);
     }
 
     @Test
