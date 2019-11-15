@@ -8,16 +8,10 @@ import java.awt.*;
  */
 
 
-public class Volvo240 extends Car implements Movable {
-
-    public final static double trimFactor = 1.25;
+public class Volvo240 extends Car {
 
     public Volvo240() {
-        this.setNrDoors(4);
-        this.setColor(Color.black);
-        this.setEnginePower(100);
-        modelName = "Volvo240";
-        stopEngine();
+        super(4,Color.black,100,"Volvo240");
     }
 /*
     @Override

@@ -8,14 +8,23 @@ import java.awt.*;
  * @author pepegas
  */
 
-public abstract class Car {
+public abstract class Car implements Movable{
+
+    public Car(int nrDoors, Color color, int enginePower, String modelName) {
+        this.nrDoors=nrDoors;
+        this.color = color;
+        this.enginePower = enginePower;
+        this.modelName = modelName;
+        stopEngine();
+    }
+
 
     private final static double trimFactor = 1.25;
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
-    public String modelName; // The car model name
+    private String modelName; // The car model name
     //Uppgift b START
     private double x;
     private double y;
@@ -25,6 +34,10 @@ public abstract class Car {
 
     public double getDirection() {
         return direction;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
     }
 
     /**
@@ -76,28 +89,16 @@ public abstract class Car {
 
     //Start getters & setters
 
-    public void setNrDoors(int nrDoors) {
-        this.nrDoors = nrDoors;
-    }
-
-    public void setEnginePower(double enginePower) {
-        this.enginePower = enginePower;
-    }
-
-    public int getNrDoors() {
-        return nrDoors;
-    }
-
     public double getEnginePower() {
         return enginePower;
     }
 
-    public void setCurrentSpeed(double speed) {
-        currentSpeed = speed;
-    }
-
     public double getCurrentSpeed() {
         return currentSpeed;
+    }
+
+    public int getNrDoors() {
+        return nrDoors;
     }
 
     public Color getColor() {
@@ -185,7 +186,7 @@ public abstract class Car {
      * @param amount
      * @author pepegas
      */
-    private void incrementSpeed(double amount) {
+    public void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
     }
 
@@ -194,7 +195,7 @@ public abstract class Car {
      * @param amount
      * @author pepegas
      */
-    private void decrementSpeed(double amount) {
+    public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 
