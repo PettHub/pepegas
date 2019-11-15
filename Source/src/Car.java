@@ -40,7 +40,7 @@ public abstract class Car implements Movable{
      * @author Toast
      */
 
-    private void setDxDy(){
+    private void updateDirectionalVelocity(){
         dx = Math.cos(direction)*getCurrentSpeed();
         dy = Math.sin(direction)*getCurrentSpeed();
     }
@@ -59,7 +59,8 @@ public abstract class Car implements Movable{
      */
 
     public void move(){
-        setDxDy();
+        //currentSpeed = Math.sqrt(dy*dy + dx*dx);
+        updateDirectionalVelocity();
         x += dx;
         y += dy;
     }
@@ -131,32 +132,38 @@ public abstract class Car implements Movable{
      * @author Toast and Oliver
      */
     public void gas(double amount) {
-        double tmpSpeed = currentSpeed;
         if (isBetween0And1(amount)) {
+            //double tmpSpeed = currentSpeed;
             incrementSpeed(amount);
-            if (currentSpeed <= tmpSpeed) {
-                brake(1 - amount);
+            /*if (currentSpeed < tmpSpeed) {
+                currentSpeed = tmpSpeed;
+                System.out.println("speed was not changed");
             }
-            if (currentSpeed > enginePower) {
+            if (currentSpeed >= enginePower) {
                 currentSpeed = enginePower;
-            }
+            }*/
         }
     }
+
     /**
      * Makes car slow down if brake is used
      * @param amount
      * @author Toast and Oliver
      */
+
     public void brake(double amount) {
         double tmpSpeed = currentSpeed;
         if (isBetween0And1(amount)) {
             decrementSpeed(amount);
-            if (currentSpeed > tmpSpeed) {
-                //currentSpeed = tmpSpeed;
-                //System.out.println("speed was not changed");
+            /*if (currentSpeed > tmpSpeed) {
+                currentSpeed = tmpSpeed;
+                System.out.println("speed was not changed");
             }
+            if (currentSpeed < 0)
+                currentSpeed = 0;*/
         }
     }
+
 
     /**
      * Checks if the amount is between 0 and 1
@@ -166,6 +173,16 @@ public abstract class Car implements Movable{
     private boolean isBetween0And1(double amount){
         return (amount <= 1 && amount >= 0);
     }
+/*
+    private double changeSpeed(double amount){
+        if (isBetween0And1(amount))
+            return amount;
+        else {
+            System.out.println("parameter out of range");
+            return 0;
+        }
+    }
+*/
     /**
      * increases speed
      * @param amount double value for increasing speed
