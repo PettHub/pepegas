@@ -25,7 +25,6 @@ public abstract class Car implements Movable{
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    //Uppgift b START
     private double x;
     private double y;
     private double dx;
@@ -34,10 +33,6 @@ public abstract class Car implements Movable{
 
     public double getDirection() {
         return direction;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
     }
 
     /**
@@ -50,13 +45,20 @@ public abstract class Car implements Movable{
         dy = Math.sin(direction)*getCurrentSpeed();
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
     /**
      * Method move uses the speeds for x and y to change the car's coordinates
      * @author Toast
      */
 
     public void move(){
-        //currentSpeed = Math.sqrt(dy*dy + dx*dx);
         setDxDy();
         x += dx;
         y += dy;
@@ -97,18 +99,6 @@ public abstract class Car implements Movable{
         return currentSpeed;
     }
 
-    public int getNrDoors() {
-        return nrDoors;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color clr) {
-        color = clr;
-    }
-
     //End getters and setters
 
     /**
@@ -129,6 +119,7 @@ public abstract class Car implements Movable{
 
     /**
      * Sets the speedFactor
+     * @return double value speed factor
      */
     public double speedFactor() {
         return enginePower * 0.01 * trimFactor;
@@ -141,11 +132,16 @@ public abstract class Car implements Movable{
      */
     public void gas(double amount) {
         double tmpSpeed = currentSpeed;
-        incrementSpeed(changeSpeed(amount));
-        if(currentSpeed < tmpSpeed){currentSpeed = tmpSpeed; System.out.println("speed was not changed");}
-        if (currentSpeed >= enginePower) { currentSpeed = enginePower;}
+        if (isBetween0And1(amount)) {
+            incrementSpeed(amount);
+            if (currentSpeed <= tmpSpeed) {
+                brake(1 - amount);
+            }
+            if (currentSpeed > enginePower) {
+                currentSpeed = enginePower;
+            }
+        }
     }
-
     /**
      * Makes car slow down if brake is used
      * @param amount
@@ -153,40 +149,29 @@ public abstract class Car implements Movable{
      */
     public void brake(double amount) {
         double tmpSpeed = currentSpeed;
-        decrementSpeed(changeSpeed(amount));
-        if(currentSpeed > tmpSpeed){
-            currentSpeed = tmpSpeed;
-            System.out.println("speed was not changed");
+        if (isBetween0And1(amount)) {
+            decrementSpeed(amount);
+            if (currentSpeed > tmpSpeed) {
+                //currentSpeed = tmpSpeed;
+                //System.out.println("speed was not changed");
+            }
         }
-        if (currentSpeed<0)
-            currentSpeed=0;
     }
-
 
     /**
      * Checks if the amount is between 0 and 1
-     * @param amount
+     * @param amount value between 0 and 1
      * @author pepegas
      */
     private boolean isBetween0And1(double amount){
         return (amount <= 1 && amount >= 0);
     }
-
-    private double changeSpeed(double amount){
-        if (isBetween0And1(amount))
-            return amount;
-        else {
-            System.out.println("parameter out of range");
-            return 0;
-        }
-    }
-
     /**
      * increases speed
-     * @param amount
+     * @param amount double value for increasing speed
      * @author pepegas
      */
-    public void incrementSpeed(double amount) {
+    private void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
     }
 
@@ -195,23 +180,8 @@ public abstract class Car implements Movable{
      * @param amount
      * @author pepegas
      */
-    public void decrementSpeed(double amount) {
+    private void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
     }
 
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
 }

@@ -14,6 +14,9 @@ class Saab95Test {
     void gas() throws Exception{
         bil.gas(1);
         assertNotEquals(bil.getCurrentSpeed(), 0.1);
+        bil.gas(0.5);
+        assertNotEquals(bil.getCurrentSpeed(), 125);
+        bil.gas(1);
     }
 
     @Test
