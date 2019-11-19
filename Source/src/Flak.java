@@ -2,23 +2,18 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class Flak {
-    protected Deque<Object> contents = new ArrayDeque<>();
-    private final int capacity;
     private int angle;
     private final int maxAngle;
     private double x;
     private double y;
     private double dx;
     private double dy;
-    public Truck truck;
+    private Truck truck = null;
 
 
-    public Flak(int capacity, int maxAngle, Truck truck) {
-        this.capacity = capacity;
+    public Flak(int maxAngle) {
         this.angle = 0;
         this.maxAngle = maxAngle;
-        this.truck = truck;
-        updateLocationAndDirection();
     }
     /*
     public void currentLoad(){
@@ -28,18 +23,26 @@ public class Flak {
         return ;
     }
     */
-    private void updateLocationAndDirection(){
+    public void attachToTruck(Truck newTruck) {
+        if (this.truck == null) {
+            this.truck = newTruck;
+            updateLocationAndDirection();
+        }
+    }
+    public void detachFromTruck(){
+        updateLocationAndDirection();
+        this.truck.flak=null;
+        this.truck = null;
+    }
+    public void updateLocationAndDirection(){
         this.dx=truck.getDx();
         this.dy=truck.getDy();
         this.x=truck.getX();
         this.y=truck.getY();
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
     public void lowerFlak(int amount){
+        updateLocationAndDirection();
         if (angle-amount<0) {
             angle = 0;
             System.out.println("Max angle");
@@ -48,11 +51,16 @@ public class Flak {
             angle-=amount;
     }
     public void raiseFlak(int amount){
+        updateLocationAndDirection();
         if (angle+amount>maxAngle) {
             angle=maxAngle;
             System.out.println("Max angle");
         }
         else
             angle+=amount;
+    }
+
+    public int getAngle() {
+        return angle;
     }
 }
