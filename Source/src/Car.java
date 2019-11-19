@@ -53,6 +53,14 @@ public abstract class Car implements Movable{
         return y;
     }
 
+    public double getDx() {
+        return dx;
+    }
+
+    public double getDy() {
+        return dy;
+    }
+
     /**
      * Method move uses the speeds for x and y to change the car's coordinates
      * @author Toast
