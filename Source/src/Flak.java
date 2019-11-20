@@ -19,11 +19,9 @@ public class Flak {
     public void attachToTruck(Truck newTruck) {
         if (this.truck == null) {
             this.truck = newTruck;
-            updateLocationAndDirection();
         }
     }
     public void detachFromTruck(){
-        updateLocationAndDirection();
         this.truck.flak=null;
         this.truck = null;
     }
@@ -35,24 +33,23 @@ public class Flak {
     }
 
     public void lowerFlak(int amount){
-        updateLocationAndDirection();
-        if (angle-amount<0) {
-            angle = 0;
-            System.out.println("Max angle");
+        if (truck.getCurrentSpeed()==0) {
+            if (angle - amount < 0) {
+                angle = 0;
+                System.out.println("Max angle");
+            } else
+                angle -= amount;
         }
-        else
-            angle-=amount;
     }
-    public void raiseFlak(int amount){
-        updateLocationAndDirection();
-        if (angle+amount>maxAngle) {
-            angle=maxAngle;
-            System.out.println("Max angle");
+    public void raiseFlak(int amount) {
+        if (truck.getCurrentSpeed() == 0) {
+            if (angle + amount > maxAngle) {
+                angle = maxAngle;
+                System.out.println("Max angle");
+            } else
+                angle += amount;
         }
-        else
-            angle+=amount;
     }
-
     public int getAngle() {
         return angle;
     }

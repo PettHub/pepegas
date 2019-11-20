@@ -4,6 +4,6 @@ public class Main {
         CarTransportTruck brummis = new CarTransportTruck("brummis");
         brummis.flak = new CarTransportFlak(4);
         brummis.flak.attachToTruck(brummis);
-        brummis.flak.addCarToFlak(brummis);
+        brummis.flak.addCarToFlak(bil);//ska inte kunna ladda sig själv
     }
 }

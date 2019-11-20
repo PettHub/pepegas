@@ -7,4 +7,10 @@ public class CarTransportTruck extends Truck {
         this.flak = new CarTransportFlak(4);
     }
 
+    @Override
+    public void move() {
+        super.move();
+        flak.updateLocationAndDirection();
+        flak.updateAllTheCars();
+    }
 }

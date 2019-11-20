@@ -10,21 +10,21 @@ public class CarTransportFlak extends Flak{
     }
 
     public void addCarToFlak(Car bil) {
-        if (this.contents.size()<this.capacity) {
+        if (this.contents.size()<this.capacity && this.getAngle()==0 && czechIfCarIsCloseToFlak(bil)) {
             updateCarLocationAndDirection(bil);
             this.contents.add(bil);
         }
     }
     public void removeCarFromFlak() {
-        if (this.contents.size() > 0) {
+        if (this.contents.size() > 0 && this.getAngle()==0) {
             Car bil = this.contents.remove(contents.size()-1);
-            updateCarLocationAndDirectionUponFlakRemoval(bil);
+            updateCarLocationAndDirectionUponCarRemoval(bil);
         }
     }
-
-    @Override
-    public void updateLocationAndDirection() {
-        super.updateLocationAndDirection();
+    public void updateAllTheCars(){
+        for (Car bil : contents){
+            updateCarLocationAndDirection(bil);
+        }
     }
 
     private void updateCarLocationAndDirection(Car bil){
@@ -33,10 +33,19 @@ public class CarTransportFlak extends Flak{
         bil.setX(this.getX());
         bil.setY(this.getY());
     }
-    private void updateCarLocationAndDirectionUponFlakRemoval(Car bil){
-        bil.setDx(0);
-        bil.setDy(0);
+    private void updateCarLocationAndDirectionUponCarRemoval(Car bil){
+        bil.setDx(this.getDx());
+        bil.setDy(this.getDy());
         bil.setX(this.getX()-Math.cos(getTruck().getDirection()*20));
         bil.setY(this.getY()-Math.sin(getTruck().getDirection()*20));
+    }
+    private boolean czechIfCarIsCloseToFlak(Car bil){
+        return czechIfXOfCarIsInProximityToXOfFlak(bil) && czechIfYOfCarIsInProximityToYOfFlak(bil);
+    }
+    private boolean czechIfXOfCarIsInProximityToXOfFlak(Car bil){
+        return (40>Math.sqrt(Math.pow(this.getX()-bil.getX(), 2)));
+    }
+    private Boolean czechIfYOfCarIsInProximityToYOfFlak(Car bil){
+        return (40>Math.sqrt(Math.pow(this.getY()-bil.getY(), 2)));
     }
 }
