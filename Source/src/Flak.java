@@ -15,14 +15,7 @@ public class Flak {
         this.angle = 0;
         this.maxAngle = maxAngle;
     }
-    /*
-    public void currentLoad(){
-        for (int x = 0; x<contents.size(); x++){
-            System.out.println(contents.peek());
-        }
-        return ;
-    }
-    */
+
     public void attachToTruck(Truck newTruck) {
         if (this.truck == null) {
             this.truck = newTruck;
@@ -62,5 +55,25 @@ public class Flak {
 
     public int getAngle() {
         return angle;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getDx() {
+        return dx;
+    }
+
+    public double getDy() {
+        return dy;
+    }
+
+    public Truck getTruck() {
+        return truck;
     }
 }
