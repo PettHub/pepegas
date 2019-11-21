@@ -1,7 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Flak {
+public class Flak implements IsAttachableToTruck{
     private int angle;
     private final int maxAngle;
     private double x;
@@ -21,6 +21,7 @@ public class Flak {
             this.truck = newTruck;
         }
     }
+
     public void detachFromTruck(){
         this.truck.flak=null;
         this.truck = null;
