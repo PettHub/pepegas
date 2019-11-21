@@ -11,12 +11,14 @@ public class ScaniaTest {
         assertEquals(scania.getCurrentSpeed(), 0.1);
     }
 
+
     @Test
     void gas() throws Exception{
         assertTrue(scania.flak.readyForMoving()); //Kollar att flak är i rätt position för att flyttas
         scania.gas(1);
         assertNotEquals(scania.getCurrentSpeed(), 0.1);
     }
+
 
     @Test
     void brake() throws Exception{
@@ -27,7 +29,7 @@ public class ScaniaTest {
     @Test
     void turnLeft() throws Exception{
         scania.turnLeft();
-        assertEquals(scania.getDirection(), Math.PI*1.5+Math.PI*20.0/360); //Byter flaket riktning
+        assertEquals(scania.getDirection(), Math.PI*1.5+Math.PI*20.0/360); //Byter flaket riktning?
     }
 
     @Test
@@ -39,11 +41,11 @@ public class ScaniaTest {
         scania.move();
         assertNotEquals(scania.getX(), 0.0);
         assertNotEquals(scania.getY(), 0.0);
-        assertEquals(scania.flak.getX(), scania.getX()); //Kollar så att flaket och trucken är på samma ställe. Borde man kolla Dx också?
-        assertEquals(scania.flak.getY(), scania.getY()); //Kollar så att flaket och trucken är på samma ställe. Borde man kolla Dx också?
+        assertEquals(scania.flak.getCoordinates()[0], scania.getX());
+        assertEquals(scania.flak.getCoordinates()[1], scania.getY()); //Kollar så att flaket och trucken är på samma ställe. Borde man kolla Dx också?
     }
 
-    @Test
+    @Test                               //Borde vi kolla att flaket har samma riktning?
     void turnRight() throws Exception{
         scania.turnRight();
         assertEquals(scania.getDirection(), Math.PI*1.5-Math.PI*20.0/360);

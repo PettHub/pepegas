@@ -64,6 +64,7 @@ public class Flak implements IsAttachableToTruck{
         coordinates[1] = this.y;
         return coordinates;
     }
+    
 
     public int getAngle() {
         return angle;

@@ -16,6 +16,9 @@ public abstract class Truck extends Automobile {
             super.move();
             this.flak.updateLocationAndDirection();
         }
+        else if (this.flak != null && !this.flak.readyForMoving()){
+            System.out.println("Flaket är inte redo!");
+        }
         else
             super.move();
     }
