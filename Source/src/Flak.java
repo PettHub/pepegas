@@ -10,6 +10,10 @@ public class Flak implements IsAttachableToTruck{
     private double dy;
     private Truck truck = null;
 
+    @Override
+    public boolean readyForMoving() {
+        return this.angle==0;
+    }
 
     public Flak(int maxAngle) {
         this.angle = 0;
@@ -26,6 +30,7 @@ public class Flak implements IsAttachableToTruck{
         this.truck.flak=null;
         this.truck = null;
     }
+
     public void updateLocationAndDirection(){
         this.dx=truck.getDx();
         this.dy=truck.getDy();
