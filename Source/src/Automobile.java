@@ -25,8 +25,8 @@ import java.awt.*;
         private double currentSpeed; // The current speed of the Automobile
         private Color color; // Color of the Automobile
         private String modelName; // The Automobile model name
-        private double x;
-        private double y;
+        private int x;
+        private int y;
         private double dx;
         private double dy;
         private double direction = Math.PI*1.5;
@@ -45,11 +45,11 @@ import java.awt.*;
             dy = Math.sin(direction)*getCurrentSpeed();
         }
 
-        public double getX() {
+        public int getX() {
             return x;
         }
 
-        public double getY() {
+        public int getY() {
             return y;
         }
 
@@ -61,11 +61,11 @@ import java.awt.*;
             return dy;
         }
 
-        public void setX(double x) {
+        public void setX(int x) {
             this.x = x;
         }
 
-        public void setY(double y) {
+        public void setY(int y) {
             this.y = y;
         }
 

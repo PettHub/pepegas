@@ -36,8 +36,8 @@ public class CarTransportFlak extends Flak{
     private void updateCarLocationAndDirectionUponCarRemoval(Car bil){
         bil.setDx(this.getDx());
         bil.setDy(this.getDy());
-        bil.setX(this.getX()-Math.cos(getTruck().getDirection()*20));
-        bil.setY(this.getY()-Math.sin(getTruck().getDirection()*20));
+        bil.setX((int)(this.getX()-Math.cos(getTruck().getDirection()*20)));
+        bil.setY((int)(this.getY()-Math.sin(getTruck().getDirection()*20)));
     }
     private boolean czechIfCarIsCloseToFlak(Car bil){
         return czechIfXOfCarIsInProximityToXOfFlak(bil) && czechIfYOfCarIsInProximityToYOfFlak(bil);

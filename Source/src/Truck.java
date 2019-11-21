@@ -7,7 +7,8 @@ public abstract class Truck extends Automobile {
     }
     /*
     Den är som en bil förutom 2 andra funktioner.
-    Den kan inte röra sig förens
+    Den kan inte röra sig förens flaket är nere. Detta är ytterligare abstraherat för framtidens skull
+    den har tillgång till ett flak
     */
     @Override
     public void move() {

@@ -4,8 +4,8 @@ import java.util.Deque;
 public class Flak implements IsAttachableToTruck{
     private int angle;
     private final int maxAngle;
-    private double x;
-    private double y;
+    private int x;
+    private int y;
     private double dx;
     private double dy;
     private Truck truck = null;
@@ -56,15 +56,24 @@ public class Flak implements IsAttachableToTruck{
                 angle += amount;
         }
     }
+
+    @Override
+    public int[] getCoordinates() {
+        int[] coordinates = new int[2];
+        coordinates[0] = this.x;
+        coordinates[1] = this.y;
+        return coordinates;
+    }
+
     public int getAngle() {
         return angle;
     }
 
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public double getY() {
+    public int getY() {
         return y;
     }
 

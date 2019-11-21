@@ -3,4 +3,5 @@ public interface IsAttachableToTruck {
     void detachFromTruck();
     void updateLocationAndDirection();
     boolean readyForMoving();
+    int[] getCoordinates();
 }
