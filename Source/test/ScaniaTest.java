@@ -57,4 +57,21 @@ public class ScaniaTest {
         assertEquals(scania.getCurrentSpeed(), 0);
     }
 
+
+
+    @Test
+    void detachFromTruck() throws Exception{
+        scania.flak.detachFromTruck();
+        assertEquals(scania.flak, null);
+    }
+
+    @Test
+    void attachToTruck() throws Exception{
+        scania.flak.detachFromTruck();
+        assertEquals(scania.flak, null);
+        scania.flak = new Flak(70);
+        scania.flak.attachToTruck(scania);
+        assertNotEquals(scania.flak, null);
+    }
+
 }

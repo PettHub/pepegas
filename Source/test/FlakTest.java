@@ -7,10 +7,15 @@ public class FlakTest {
 
     @Test
     void raiseFlak() throws Exception{
+        flak.raiseFlak(50);
+        assertEquals(flak.getAngle(), 50);
     }
 
     @Test
     void lowerFlak() throws Exception{
+        flak.raiseFlak(50);
+        flak.lowerFlak(30);
+        assertEquals(flak.getAngle(),20);
     }
 
 
