@@ -1,6 +1,13 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
-
+/**
+ * Flak is a Class that implements IsAttachableToTruck.
+ *
+ * Is made to allow trucks to have additioinal functions and is also a standard for future flak-designs
+ * Contains coordinates and a variable for the truck it is currently attached to
+ * Also contains a value for the angle of the flak. What this represents is up to the creator of the flak to decide
+ * @author pepegas
+ */
 public class Flak implements IsAttachableToTruck{
     private int angle;
     private final int maxAngle;

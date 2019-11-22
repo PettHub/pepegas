@@ -1,6 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * A class for the car transport flak. inherits flak
+ *
+ *
+ * This is a special flak that comes with many additional methods to the original flak as well as an actuall capacity.
+ * The capacity is for storing objects of the Class Car and is determined in the constructor call.
+ * Contains checks for and methods to load and unload cars
+ * @author pepegas
+ */
 public class CarTransportFlak extends Flak{
     List<Car> contents = new ArrayList<>();
     private final int capacity;

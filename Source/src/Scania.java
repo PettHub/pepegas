@@ -1,5 +1,9 @@
 import java.awt.*;
-
+/**
+ * A class for a Scania truck, inherits the class Truck
+ *
+ *@author pepegas
+ */
 public class Scania extends Truck{
     public Scania() {
         super(2, Color.black, 90, "Scania");
