@@ -14,6 +14,14 @@ public class CarTransportTruckTest {
         assertEquals(CTT.getY(), 0.0);
         CTT.startEngine();
         CTT.turnLeft();
+        CTT.gas(1);
+        CTT.gas(1);
+        CTT.gas(1);
+        CTT.gas(1);
+        CTT.gas(1);
+        CTT.gas(1);
+        CTT.gas(1);
+        CTT.gas(1);
         CTT.move();
         assertNotEquals(CTT.getX(), 0.0);
         assertNotEquals(CTT.getY(), 0.0);
