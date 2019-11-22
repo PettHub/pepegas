@@ -3,9 +3,7 @@ import java.awt.*;
 /**
  * A class for Car.
  *
- * Contains necessary methods to make a car move (speed up, slow down, turn). Assumes "forward" is up.
- *
- * @author pepegas
+ * Only contains a constructor calling for the super (Automobile) constructor
  */
 
 public abstract class Car extends Automobile {

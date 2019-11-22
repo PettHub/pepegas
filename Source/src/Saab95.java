@@ -5,7 +5,6 @@ import java.awt.*;
  *
  * Contains a constructor and methods to turn turbo off and on, a method to calculate the speed factor
  * and two methods which both use the speed factor to either increase or decrease the speed.
- * @author pepegas
  */
 
 public class Saab95 extends Car {
@@ -35,15 +34,5 @@ public class Saab95 extends Car {
         if (turboOn) turbo = 1.3;
         return this.getEnginePower() * 0.01 * turbo;
     }
-/*
-    @Override
-    public void incrementSpeed(double amount) {
-        this.setCurrentSpeed(getCurrentSpeed() + speedFactor() * amount);
-    }
 
-    @Override
-    public void decrementSpeed(double amount) {
-        this.setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
-    }
-*/
 }

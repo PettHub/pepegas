@@ -1,5 +1,6 @@
 import java.awt.*;
 
+
 public class CarTransportTruck extends Truck {
     public CarTransportFlak flak = null;
 
@@ -7,6 +8,10 @@ public class CarTransportTruck extends Truck {
         super(2, Color.CYAN, 70, modelName);
         this.flak = new CarTransportFlak(capacity);
         this.flak.attachToTruck(this);
+    }
+
+    public CarTransportTruck(String modelName) {
+        super(2, Color.CYAN, 70, modelName);
     }
 
     @Override

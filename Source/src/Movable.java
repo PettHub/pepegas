@@ -1,7 +1,6 @@
 /**
- * An interface for movable vehicles to implement (here volvo and saab)
+ * An interface for movable vehicles to implement (here automobiles)
  *
- * @author pepegas
  */
 
 public interface Movable{
