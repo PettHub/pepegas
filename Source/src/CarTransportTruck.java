@@ -24,7 +24,10 @@ public class CarTransportTruck extends Truck {
     @Override
     public void move() {
         super.move();
-        if (flak != null)
+        if (flak != null) {
+            this.flak.updateLocationAndDirection();
             this.flak.updateAllTheCars();
+            System.out.println("Updated the cars (Debog)");
+        }
     }
 }

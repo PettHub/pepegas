@@ -35,6 +35,15 @@ class Volvo240Test {
         assertEquals(bil.getY(), 0.0);
         bil.startEngine();
         bil.turnLeft();
+        bil.turnLeft();
+        bil.turnLeft();
+        bil.turnLeft();
+        bil.turnLeft();
+        bil.gas(1);
+        bil.gas(1);
+        bil.gas(1);
+        bil.gas(1);
+        bil.gas(1);
         bil.move();
         assertNotEquals(bil.getX(), 0.0);
         assertNotEquals(bil.getY(), 0.0);

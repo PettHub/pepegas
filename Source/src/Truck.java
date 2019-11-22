@@ -15,14 +15,18 @@ public abstract class Truck extends Automobile {
     */
     @Override
     public void move() {
-        if (this.flak != null && this.flak.readyForMoving()) {
-            super.move();
-            this.flak.updateLocationAndDirection();
-        }
-        else if (this.flak != null && !this.flak.readyForMoving()){
-            System.out.println("Flaket är inte redo!");
+        if (this.flak != null) {
+            if (this.flak.readyForMoving()) {
+                super.move();
+                this.flak.updateLocationAndDirection();
+            } else if (!this.flak.readyForMoving()) {
+                System.out.println("Flaket är inte redo!");
+            }
         }
         else
             super.move();
+    }
+    void detachFromTruck(){
+        this.flak=null;
     }
 }

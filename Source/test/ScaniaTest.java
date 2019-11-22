@@ -38,6 +38,15 @@ public class ScaniaTest {
         assertEquals(scania.getY(), 0.0);
         scania.startEngine();
         scania.turnLeft();
+        scania.turnLeft();
+        scania.turnLeft();
+        scania.turnLeft();
+        scania.turnLeft();
+        scania.gas(1);
+        scania.gas(1);
+        scania.gas(1);
+        scania.gas(1);
+        scania.gas(1);
         scania.move();
         assertNotEquals(scania.getX(), 0.0);
         assertNotEquals(scania.getY(), 0.0);
@@ -56,8 +65,6 @@ public class ScaniaTest {
         scania.stopEngine();
         assertEquals(scania.getCurrentSpeed(), 0);
     }
-
-
 
     @Test
     void detachFromTruck() throws Exception{
