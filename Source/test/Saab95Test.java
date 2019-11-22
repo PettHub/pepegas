@@ -46,6 +46,12 @@ class Saab95Test {
         assertEquals(bil.getY(), 0.0);
         bil.startEngine();
         bil.turnLeft();
+        bil.turnLeft();
+        bil.turnLeft();
+        bil.turnLeft();
+        bil.turnLeft();
+        bil.gas(1);
+        bil.gas(1);
         bil.gas(1);
         bil.gas(1);
         bil.gas(1);

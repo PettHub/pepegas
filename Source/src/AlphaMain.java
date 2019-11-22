@@ -12,5 +12,9 @@ public class AlphaMain {
         brummis.flak = new CarTransportFlak(4);
         brummis.flak.attachToTruck(brummis);
         brummis.flak.addCarToFlak(bil);//ska inte kunna ladda sig själv
+        brummis.gas(1);
+        brummis.gas(1);
+        brummis.gas(1);
+        brummis.move();
     }
 }

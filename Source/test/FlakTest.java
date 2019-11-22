@@ -10,6 +10,7 @@ public class FlakTest {
     void raiseFlak() throws Exception{
         scania.flak.raiseFlak(50);
         assertEquals(scania.flak.getAngle(), 50);
+
     }
 
     @Test
@@ -17,6 +18,7 @@ public class FlakTest {
         scania.flak.raiseFlak(50);
         scania.flak.lowerFlak(30);
         assertEquals(scania.flak.getAngle(),20);
+
     }
 
 

@@ -34,8 +34,7 @@ public class Flak implements IsAttachableToTruck{
     }
 
     public void detachFromTruck(){
-        this.truck.flak=null;
-        this.truck = null;
+        this.truck.detachFromTruck();
     }
 
     public void updateLocationAndDirection(){

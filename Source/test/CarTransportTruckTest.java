@@ -17,6 +17,10 @@ public class CarTransportTruckTest {
         CTT.gas(1);
         CTT.gas(1);
         CTT.gas(1);
+        CTT.turnLeft();
+        CTT.turnLeft();
+        CTT.turnLeft();
+        CTT.turnLeft();
         CTT.gas(1);
         CTT.gas(1);
         CTT.gas(1);
