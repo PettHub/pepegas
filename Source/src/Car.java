@@ -10,4 +10,5 @@ public abstract class Car extends Automobile {
     public Car(int nrDoors, Color color, int enginePower, String modelName) {
         super(nrDoors, color, enginePower, modelName);
     }
+    boolean isOccupied = false;
 }
