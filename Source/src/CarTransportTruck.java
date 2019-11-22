@@ -1,11 +1,16 @@
 import java.awt.*;
-
+/**
+ * A class for a car transport truck. inherits the truck class
+ * Contains a different flak type that is specific flak for car transport and further overrides the "move function"
+ * @author pepegas
+ */
 public class CarTransportTruck extends Truck {
-    public CarTransportFlak flak = null;
+    CarTransportFlak flak = null;
 
     public CarTransportTruck(String modelName) {
         super(2, Color.CYAN, 70, modelName);
         this.flak = new CarTransportFlak(4);
+        this.flak.attachToTruck(this);
     }
 
     @Override
