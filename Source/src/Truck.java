@@ -13,6 +13,9 @@ public abstract class Truck extends Automobile {
     Den kan inte röra sig förens flaket är nere. Detta är ytterligare abstraherat för framtidens skull
     den har tillgång till ett flak
     */
+    void detachFlak(){
+        this.flak=null;
+    }
     @Override
     public void move() {
         if (this.flak != null) {
