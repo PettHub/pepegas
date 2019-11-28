@@ -4,8 +4,7 @@ import java.awt.*;
  *
  *@author pepegas
  */
-public class Scania extends Truck{
-    public Flak flak = null;
+public class Scania extends Truck<Flak>{
 
     public Scania() {
         super(2, Color.black, 90, "Scania");

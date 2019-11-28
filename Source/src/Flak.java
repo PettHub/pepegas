@@ -15,7 +15,6 @@ public class Flak implements IsAttachableToTruck{
     private int y;
     private double dx;
     private double dy;
-    private Truck truck = null;
 
     @Override
     public boolean readyForMoving() {
@@ -27,16 +26,6 @@ public class Flak implements IsAttachableToTruck{
         this.maxAngle = maxAngle;
     }
 
-    public void attachToTruck(Truck newTruck) {
-        if (this.truck == null) {
-            this.truck = newTruck;
-        }
-    }
-
-    public void detachFromTruck(){
-        this.truck.detachFromTruck();
-    }
-
     public void updateLocationAndDirection(){
         this.dx=truck.getDx();
         this.dy=truck.getDy();
@@ -45,7 +34,7 @@ public class Flak implements IsAttachableToTruck{
     }
 
     public void lowerFlak(int amount){
-        if (truck.getCurrentSpeed()==0) {
+        if (this.dx == 0 && this.dy ==0) {
             if (angle - amount < 0) {
                 angle = 0;
                 System.out.println("Max angle");
@@ -54,7 +43,7 @@ public class Flak implements IsAttachableToTruck{
         }
     }
     public void raiseFlak(int amount) {
-        if (truck.getCurrentSpeed() == 0) {
+        if (this.dx == 0 && this.dy==0) {
             if (angle + amount > maxAngle) {
                 angle = maxAngle;
                 System.out.println("Max angle");
@@ -72,7 +61,7 @@ public class Flak implements IsAttachableToTruck{
     }
     
 
-    public int getAngle() {
+    int getAngle() {
         return angle;
     }
 
@@ -84,15 +73,27 @@ public class Flak implements IsAttachableToTruck{
         return y;
     }
 
-    public double getDx() {
+    double getDx() {
         return dx;
     }
 
-    public double getDy() {
+    double getDy() {
         return dy;
     }
 
-    public Truck getTruck() {
-        return truck;
+    void setX(int x) {
+        this.x = x;
+    }
+
+    void setY(int y) {
+        this.y = y;
+    }
+
+    void setDx(double dx) {
+        this.dx = dx;
+    }
+
+    void setDy(double dy) {
+        this.dy = dy;
     }
 }
