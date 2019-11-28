@@ -30,4 +30,7 @@ public abstract class Truck <A extends IsAttachableToTruck> extends Automobile {
         else
             super.move();
     }
+    void attachFlak(A newFlak){
+        this.flak = newFlak;
+    }
 }

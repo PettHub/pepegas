@@ -11,4 +11,12 @@ public abstract class Car extends Automobile {
         super(nrDoors, color, enginePower, modelName);
     }
     boolean isOccupied = false;
+
+    @Override
+    public void move() {
+        if (!isOccupied)
+            super.move();
+        else
+            System.out.println("is pre-occupied and will not move");
+    }
 }
