@@ -21,6 +21,7 @@ public class CarTransportFlak extends Flak{
         if (this.contents.size()<this.capacity && this.getAngle()==0 && czechIfCarIsCloseToFlak(bil)) {
             updateCarLocationAndDirection(bil);
             this.contents.add(bil);
+            bil.isOccupied = true;
         }
     }
 
@@ -28,6 +29,7 @@ public class CarTransportFlak extends Flak{
         if (this.contents.size() > 0 && this.getAngle()==0) {
             Car bil = this.contents.remove(contents.size()-1);
             updateCarLocationAndDirectionUponCarRemoval(bil);
+            bil.isOccupied = false;
         }
     }
     public void updateAllTheCars(){

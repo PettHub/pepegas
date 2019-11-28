@@ -1,10 +1,12 @@
+import org.hamcrest.core.Is;
+
 import java.awt.*;
 /**
  * An abstract class for the generic truck, inherits from the Automotive class. Overrides the "move" function for integration of flak
  * @author pepegas
  */
-public abstract class Truck extends Automobile {
-    public IsAttachableToTruck flak=null;
+public abstract class Truck <A extends IsAttachableToTruck> extends Automobile {
+    public A flak=null;
     public Truck(int nrDoors, Color color, int enginePower, String modelName) {
         super(nrDoors, color, enginePower, modelName);
     }
@@ -31,5 +33,12 @@ public abstract class Truck extends Automobile {
     }
     void detachFromTruck(){
         this.flak=null;
+    }
+
+    public void updateLocationAndDirection(){
+        this.dx=truck.getDx();
+        this.dy=truck.getDy();
+        this.x=truck.getX();
+        this.flak.=truck.getY();
     }
 }
