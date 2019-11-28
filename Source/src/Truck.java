@@ -1,5 +1,3 @@
-import org.hamcrest.core.Is;
-
 import java.awt.*;
 /**
  * An abstract class for the generic truck, inherits from the Automotive class. Overrides the "move" function for integration of flak
