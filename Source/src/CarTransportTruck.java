@@ -13,16 +13,21 @@ public class CarTransportTruck extends Truck<CarTransportFlak> {
     public CarTransportTruck (String modelName, int capacity) {
         super(2, Color.CYAN, 70, modelName);
         this.flak = new CarTransportFlak(capacity);
-        this.flak.attachToTruck(this);
     }
 
     @Override
     public void move() {
         super.move();
         if (flak != null) {
-            this.flak.updateLocationAndDirection();
+            updateLocationAndDirection();
             this.flak.updateAllTheCars();
             System.out.println("Updated the cars (Debog)");
         }
+    }
+    public void updateLocationAndDirection(){
+        this.flak.setCurrentSpeed(this.getCurrentSpeed());
+        this.flak.setDirection(this.getDirection());
+        this.flak.setX(this.getX());
+        this.flak.setY(this.getY());
     }
 }

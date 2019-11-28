@@ -3,7 +3,5 @@
  * @author pepegas
  */
 public interface IsAttachableToTruck {
-    void updateLocationAndDirection();
     boolean readyForMoving();
-    int[] getCoordinates();
 }

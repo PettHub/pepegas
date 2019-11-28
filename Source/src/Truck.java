@@ -23,22 +23,11 @@ public abstract class Truck <A extends IsAttachableToTruck> extends Automobile {
         if (this.flak != null) {
             if (this.flak.readyForMoving()) {
                 super.move();
-                this.flak.updateLocationAndDirection();
             } else if (!this.flak.readyForMoving()) {
                 System.out.println("Flaket är inte redo!");
             }
         }
         else
             super.move();
-    }
-    void detachFromTruck(){
-        this.flak=null;
-    }
-
-    public void updateLocationAndDirection(){
-        this.dx=truck.getDx();
-        this.dy=truck.getDy();
-        this.x=truck.getX();
-        this.flak.=truck.getY();
     }
 }

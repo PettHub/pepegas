@@ -9,20 +9,19 @@ public class Scania extends Truck<Flak>{
     public Scania() {
         super(2, Color.black, 90, "Scania");
         this.flak = new Flak(70);
-        this.flak.attachToTruck(this);
     }
     @Override
     public void move() {
+        super.move();
         if (this.flak != null) {
-            if (this.flak.readyForMoving()) {
-                super.move();
-                this.flak.updateLocationAndDirection();
-            } else if (!this.flak.readyForMoving()) {
-                System.out.println("Flaket är inte redo!");
-            }
+            updateLocationAndDirection();
         }
-        else
-            super.move();
+    }
+    public void updateLocationAndDirection(){
+        this.flak.setCurrentSpeed(this.getCurrentSpeed());
+        this.flak.setDirection(this.getDirection());
+        this.flak.setX(this.getX());
+        this.flak.setY(this.getY());
     }
     void detachFromTruck(){
         this.flak=null;
