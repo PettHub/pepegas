@@ -11,7 +11,7 @@ import java.awt.*;
 public class CarTransportTruck extends Truck<CarTransportFlak> {
 
     public CarTransportTruck (String modelName, int capacity) {
-        super(2, Color.CYAN, 70, modelName);
+        super(2, Color.BLACK, 70, modelName);
         this.flak = new CarTransportFlak(capacity);
     }
 

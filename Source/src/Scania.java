@@ -7,7 +7,7 @@ import java.awt.*;
 public class Scania extends Truck<Flak>{
 
     public Scania() {
-        super(2, Color.black, 90, "Scania");
+        super(2, Color.RED, 90, "Scania");
         this.flak = new Flak(70);
     }
     @Override
