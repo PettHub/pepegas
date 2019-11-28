@@ -12,12 +12,12 @@ import java.util.List;
 public class CarTransportFlak extends Flak{
     List<Car> contents = new ArrayList<>();
     private final int capacity;
-    public CarTransportFlak(int capacity) {
+    CarTransportFlak(int capacity) {
         super(1);
         this.capacity = capacity;
     }
 
-    public void addCarToFlak(Car bil) {
+    void addCarToFlak(Car bil) {
         if (this.contents.size()<this.capacity && this.getAngle()==0 && czechIfCarIsCloseToFlak(bil)) {
             updateCarLocationAndDirection(bil);
             this.contents.add(bil);
@@ -25,14 +25,14 @@ public class CarTransportFlak extends Flak{
         }
     }
 
-    public void removeCarFromFlak() {
+    void removeCarFromFlak() {
         if (this.contents.size() > 0 && this.getAngle()==0) {
             Car bil = this.contents.remove(contents.size()-1);
             updateCarLocationAndDirectionUponCarRemoval(bil);
             bil.isOccupied = false;
         }
     }
-    public void updateAllTheCars(){
+    void updateAllTheCars(){
         for (Car bil : contents){
             updateCarLocationAndDirection(bil);
         }

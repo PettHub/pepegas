@@ -1,5 +1,3 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
 /**
  * Flak is a Class that implements IsAttachableToTruck.
  *
@@ -13,8 +11,8 @@ public class Flak implements IsAttachableToTruck{
     private final int maxAngle;
     private int x;
     private int y;
-    private double dx;
-    private double dy;
+    private double direction;
+    private double currentSpeed;
 
     @Override
     public boolean readyForMoving() {
@@ -26,15 +24,8 @@ public class Flak implements IsAttachableToTruck{
         this.maxAngle = maxAngle;
     }
 
-    public void updateLocationAndDirection(){
-        this.dx=truck.getDx();
-        this.dy=truck.getDy();
-        this.x=truck.getX();
-        this.y=truck.getY();
-    }
-
     public void lowerFlak(int amount){
-        if (this.dx == 0 && this.dy ==0) {
+        if (this.currentSpeed == 0) {
             if (angle - amount < 0) {
                 angle = 0;
                 System.out.println("Max angle");
@@ -43,7 +34,7 @@ public class Flak implements IsAttachableToTruck{
         }
     }
     public void raiseFlak(int amount) {
-        if (this.dx == 0 && this.dy==0) {
+        if (this.currentSpeed == 0) {
             if (angle + amount > maxAngle) {
                 angle = maxAngle;
                 System.out.println("Max angle");
@@ -52,7 +43,6 @@ public class Flak implements IsAttachableToTruck{
         }
     }
 
-    @Override
     public int[] getCoordinates() {
         int[] coordinates = new int[2];
         coordinates[0] = this.x;
@@ -73,14 +63,6 @@ public class Flak implements IsAttachableToTruck{
         return y;
     }
 
-    double getDx() {
-        return dx;
-    }
-
-    double getDy() {
-        return dy;
-    }
-
     void setX(int x) {
         this.x = x;
     }
@@ -89,11 +71,19 @@ public class Flak implements IsAttachableToTruck{
         this.y = y;
     }
 
-    void setDx(double dx) {
-        this.dx = dx;
+    public double getDirection() {
+        return direction;
     }
 
-    void setDy(double dy) {
-        this.dy = dy;
+    public void setDirection(double direction) {
+        this.direction = direction;
+    }
+
+    public double getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    public void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
     }
 }
