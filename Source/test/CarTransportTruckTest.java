@@ -1,4 +1,4 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
+/*import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
 
@@ -37,3 +37,4 @@ public class CarTransportTruckTest {
         assertEquals(CTT.flak.contents.get(1).getY(), CTT.getY());
     }
 }
+*/
