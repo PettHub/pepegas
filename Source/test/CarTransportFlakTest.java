@@ -24,6 +24,6 @@ public class CarTransportFlakTest {
         assertNotEquals(CTT.getY(), bil1.getY());
     }
 
-}
+}*/
 
 */
