@@ -11,6 +11,5 @@ public class AlphaMain {
         Verkstad<Volvo240> volvoVerkstad = new Verkstad<Volvo240>(4);
         CarTransportTruck biltransport = new CarTransportTruck("bil", 2);
         biltransport.detachFlak();
-        biltransport.createNewFlak(new CarTransportFlak(5));
     }
 }
