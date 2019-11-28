@@ -1,4 +1,3 @@
-import org.hamcrest.core.Is;
 
 import java.awt.*;
 /**
