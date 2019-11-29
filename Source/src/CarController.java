@@ -73,4 +73,38 @@ public class CarController {
             car.brake(brake);
         }
     }
+    void setTurboOn() {
+        for (Automobile car : cars) {
+            if (car.getModelName().equals("Saab95")){
+                Saab95 tmp = (Saab95) car;
+                tmp.setTurboOn();
+            }
+        }
+    }
+    void setTurboOff() {
+        for (Automobile car : cars) {
+            if (car.getModelName().equals("Saab95")){
+                Saab95 tmp = (Saab95) car;
+                tmp.setTurboOff();
+            }
+        }
+    }
+    void lowerBed() {
+        for (Automobile car : cars) {
+            if (car instanceof Truck && car.getModelName().equals("Scania")){
+                Truck<Flak> tmp = (Truck<Flak>) car;
+                if (tmp.flak != null)
+                    tmp.flak.lowerFlak();
+            }
+        }
+    }
+    void raiseBed() {
+        for (Automobile car : cars) {
+            if (car instanceof Truck && car.getModelName().equals("Scania")){
+                Truck<Flak> tmp = (Truck<Flak>) car;
+                if (tmp.flak != null)
+                    tmp.flak.raiseFlak();
+            }
+        }
+    }
 }
