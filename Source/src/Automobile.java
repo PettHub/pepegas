@@ -196,5 +196,7 @@ import java.awt.*;
         return currentSpeed;
     }
 
-
+    public String getModelName() {
+        return modelName;
     }
+}
