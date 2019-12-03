@@ -19,8 +19,12 @@ public class CarView extends JFrame{
 
     // The controller member
     CarController carC;
-
+    ;
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
+
+
+
+
 
     JPanel controlPanel = new JPanel();
 
@@ -112,7 +116,7 @@ public class CarView extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 carC.brake(gasAmount);
             }
-        });
+    });
 
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
