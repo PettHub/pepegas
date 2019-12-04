@@ -124,7 +124,7 @@ public class DrawPanel extends JPanel {
         super.paintComponent(g);
 
         for (int i = 0; i < vehicleImage.size(); i++) {
-            g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x + 100 * i, vehiclePoint.get(i).y, null); // see javadoc for more info on the parameters
+            g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x , vehiclePoint.get(i).y, null); // see javadoc for more info on the parameters
             //g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x, vehiclePoint.get(i).y, null); // see javadoc for more info on the parameters
         }
     }

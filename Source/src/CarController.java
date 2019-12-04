@@ -29,14 +29,17 @@ public class CarController {
     public static void main(String[] args) {
         // Instance of this class
         CarController cc = new CarController();
-
+        cc.frame = new CarView("CarSim 1.0", cc);
         cc.cars.add(new Volvo240());
         cc.cars.add(new Scania());
         cc.cars.add(new Saab95());
+        cc.cars.get(0).setY(40);
+        cc.cars.get(1).setY(200);
+        cc.cars.get(2).setY(360);
 
 
         // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
+
 
         // Start the timer
         cc.timer.start();
