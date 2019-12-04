@@ -145,35 +145,31 @@ public class CarController {
             }
             void setTurboOn () {
                 for (Automobile car : cars) {
-                    if (car.getModelName().equals("Saab95")) {
-                        Saab95 tmp = (Saab95) car;
-                        tmp.setTurboOn();
+                    if (car instanceof Saab95) {
+                        ((Saab95) car).setTurboOn();
                     }
                 }
             }
             void setTurboOff () {
                 for (Automobile car : cars) {
-                    if (car.getModelName().equals("Saab95")) {
-                        Saab95 tmp = (Saab95) car;
-                        tmp.setTurboOff();
+                    if (car instanceof Saab95) {
+                        ((Saab95) car).setTurboOff();
                     }
                 }
             }
             void lowerBed () {
                 for (Automobile car : cars) {
-                    if (car instanceof Truck && car.getModelName().equals("Scania")) {
-                        Truck<Flak> tmp = (Truck<Flak>) car;
-                        if (tmp.flak != null)
-                            tmp.flak.lowerFlak();
+                    if (car instanceof Scania) {
+                        if (((Scania) car).flak != null)
+                            ((Scania)car).flak.lowerFlak();
                     }
                 }
             }
             void raiseBed () {
                 for (Automobile car : cars) {
-                    if (car instanceof Truck && car.getModelName().equals("Scania")) {
-                        Truck<Flak> tmp = (Truck<Flak>) car;
-                        if (tmp.flak != null)
-                            tmp.flak.raiseFlak();
+                    if (car instanceof Scania) {
+                        if (((Scania) car).flak != null)
+                            ((Scania)car).flak.raiseFlak();
                     }
                 }
             }
