@@ -14,4 +14,9 @@ public class Volvo240 extends Car {
         super(4,Color.black,100,"Volvo240");
     }
 
+
+
+
+
+
 }
