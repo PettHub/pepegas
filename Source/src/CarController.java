@@ -42,139 +42,180 @@ public class CarController {
         cc.timer.start();
     }
 
+    void gas(int amount) {
+        double gas = ((double) amount) / 100;
+        for (Automobile car : cars) {
+            car.gas(gas);
+        }
+    }
+    void brake(int amount) {
+        double brake = ((double) amount) / 100;
+        for (Automobile car : cars) {
+            car.brake(brake);
+        }
+    }
+
+    public void setTurboOn() {
+        for (Automobile car : cars) {
+            if (car instanceof Saab95) {
+                ((Saab95) car).setTurboOn();
+            }
+        }
+    }
+
+    void setTurboOff() {
+        for (Automobile car : cars) {
+            if (car instanceof Saab95) {
+                ((Saab95) car).setTurboOff();
+            }
+        }
+    }
+
+    void lowerBed() {
+        for (Automobile car : cars) {
+            if (car instanceof Scania) {
+                if (((Scania) car).flak != null)
+                    ((Scania) car).flak.lowerFlak();
+            }
+        }
+    }
+
+    void raiseBed() {
+        for (Automobile car : cars) {
+            if (car instanceof Scania) {
+                if (((Scania) car).flak != null)
+                    ((Scania) car).flak.raiseFlak();
+            }
+        }
+    }
+
     /* Each step the TimerListener moves all the cars in the list and tells the
      * view to update its images. Change this method to your needs.
      * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
-
-
+            int i = 0;
             for (Automobile car : cars) {
                 car.move();
-                int i = 0;
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
-                frame.drawPanel.moveit(x, y);
-                ifHitWallChangeDirection(car, frame.drawPanel.hitWall());
-                isAboutToHitWall(car, frame.drawPanel.aboutToHitWall());
+                frame.drawPanel.moveit(x, y, i);
+                ifHitWallChangeDirection(car, frame.drawPanel.hitWall(i));
                 i++;
                 // repaint() calls the paintComponent method of the panel
-                    frame.drawPanel.repaint();
-                }
+                frame.drawPanel.repaint();
             }
-
-            private void ifHitWallChangeDirection (Automobile car, String wallHit){
-                double pi = Math.PI;
-                double difference;
-                switch (wallHit) {
-                    case "none":
-                        break;
-                    case "Upper":
-                        if (car.getDirection() >= 1.5 * pi) {
-                            difference = car.getDirection() - 1.5 * pi;
-                            car.setDirection(0.5 * pi - difference);
-                        } else {
-                            difference = 1.5 * pi - car.getDirection();
-                            car.setDirection(0.5 * pi + difference);
-                        }
-                        car.setY(0);
-                        break;
-                    case "Lower":
-                        if (car.getDirection() >= 0.5 * pi) {
-                            difference = car.getDirection() - 0.5 * pi;
-                            car.setDirection(1.5 * pi - difference);
-                        } else {
-                            difference = 0.5 * pi - car.getDirection();
-                            car.setDirection(1.5 * pi + difference);
-                        }
-                        car.setY(800 - (240 + 60));
-                        break;
-                    case "Left":
-                        if (car.getDirection() >= 1 * pi) {
-                            difference = car.getDirection() - 1 * pi;
-                            car.setDirection(2 * pi - difference);
-                        } else {
-                            difference = 1 * pi - car.getDirection();
-                            car.setDirection(difference);
-                        }
-                        car.setX(0);
-                        break;
-                    case "Right":
-                        if (car.getDirection() >= 0 * pi) {
-                            difference = car.getDirection();
-                            car.setDirection(1 * pi - difference);
-                        } else if (car.getDirection() <= 2 * pi) {
-                            difference = 2 * pi - car.getDirection();
-                            car.setDirection(difference + pi);
-                        }
-                        car.setX(800 - 100);
-                        break;
-                }
-            }
-            private boolean isAboutToHitWall (Automobile car, String wallHit){
-                switch (wallHit) {
-                    case "Upper":
-                        if ()
-                            break;
-                    case "Lower":
-                        break;
-                    case "Left":
-                        break;
-                    case "Right":
-                        break;
-                }
-            }
-
         }
+
+        private void ifHitWallChangeDirection(Automobile car, String wallHit) {
+            double pi = Math.PI;
+            double difference;
+            switch (wallHit) {
+                case "none":
+                    break;
+                case "Upper":
+                    if (car.getDirection() >= 1.5 * pi) {
+                        difference = car.getDirection() - 1.5 * pi;
+                        car.setDirection(0.5 * pi - difference);
+                    } else {
+                        difference = 1.5 * pi - car.getDirection();
+                        car.setDirection(0.5 * pi + difference);
+                    }
+                    car.setY(0);
+                    break;
+                case "Lower":
+                    if (car.getDirection() >= 0.5 * pi) {
+                        difference = car.getDirection() - 0.5 * pi;
+                        car.setDirection(1.5 * pi - difference);
+                    } else {
+                        difference = 0.5 * pi - car.getDirection();
+                        car.setDirection(1.5 * pi + difference);
+                    }
+                    car.setY(800 - (240 + 60));
+                    break;
+                case "Left":
+                    if (car.getDirection() >= 1 * pi) {
+                        difference = car.getDirection() - 1 * pi;
+                        car.setDirection(2 * pi - difference);
+                    } else {
+                        difference = 1 * pi - car.getDirection();
+                        car.setDirection(difference);
+                    }
+                    car.setX(0);
+                    break;
+                case "Right":
+                    if (car.getDirection() >= 0 * pi) {
+                        difference = car.getDirection();
+                        car.setDirection(1 * pi - difference);
+                    } else if (car.getDirection() <= 2 * pi) {
+                        difference = 2 * pi - car.getDirection();
+                        car.setDirection(difference + pi);
+                    }
+                    car.setX(800 - 100);
+                    break;
+            }
+        }
+
+        private boolean isAboutToHitWall(Automobile car, String wallHit) {
+            switch (wallHit) {
+                case "Upper":
+                    break;
+                case "Lower":
+                    break;
+                case "Left":
+                    break;
+                case "Right":
+                    break;
+            }
+            return true;
+        }
+
 
         // Calls the gas method for each car once
         void gas(int amount) {
             double gas = ((double) amount) / 100;
+            for (Automobile car : cars) {
+                car.gas(gas);
+            }
+        }
+        void brake(int amount) {
+            double brake = ((double) amount) / 100;
+            for (Automobile car : cars) {
+                car.brake(brake);
+            }
+        }
 
-                for (Automobile car : cars) {
-                    car.gas(gas);
-                }
-            }
-
-            void brake ( int amount){
-                double brake = ((double) amount) / 100;
-                for (Automobile car : cars) {
-                    car.brake(brake);
-                }
-            }
-            void setTurboOn () {
-                for (Automobile car : cars) {
-                    if (car.getModelName().equals("Saab95")) {
-                        Saab95 tmp = (Saab95) car;
-                        tmp.setTurboOn();
-                    }
-                }
-            }
-            void setTurboOff () {
-                for (Automobile car : cars) {
-                    if (car.getModelName().equals("Saab95")) {
-                        Saab95 tmp = (Saab95) car;
-                        tmp.setTurboOff();
-                    }
-                }
-            }
-            void lowerBed () {
-                for (Automobile car : cars) {
-                    if (car instanceof Truck && car.getModelName().equals("Scania")) {
-                        Truck<Flak> tmp = (Truck<Flak>) car;
-                        if (tmp.flak != null)
-                            tmp.flak.lowerFlak();
-                    }
-                }
-            }
-            void raiseBed () {
-                for (Automobile car : cars) {
-                    if (car instanceof Truck && car.getModelName().equals("Scania")) {
-                        Truck<Flak> tmp = (Truck<Flak>) car;
-                        if (tmp.flak != null)
-                            tmp.flak.raiseFlak();
-                    }
+        public void setTurboOn() {
+            for (Automobile car : cars) {
+                if (car instanceof Saab95) {
+                    ((Saab95) car).setTurboOn();
                 }
             }
         }
+
+        void setTurboOff() {
+            for (Automobile car : cars) {
+                if (car instanceof Saab95) {
+                    ((Saab95) car).setTurboOff();
+                }
+            }
+        }
+
+        void lowerBed() {
+            for (Automobile car : cars) {
+                if (car instanceof Scania) {
+                    if (((Scania) car).flak != null)
+                        ((Scania) car).flak.lowerFlak();
+                }
+            }
+        }
+        void raiseBed() {
+            for (Automobile car : cars) {
+                if (car instanceof Scania) {
+                    if (((Scania) car).flak != null)
+                        ((Scania) car).flak.raiseFlak();
+                }
+            }
+        }
+    }
+}
