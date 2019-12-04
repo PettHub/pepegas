@@ -218,5 +218,6 @@ public abstract class Automobile implements Movable {
 
     public void setDirection(double direction) {
         this.direction = direction;
-    }
-}
+
+
+}}
