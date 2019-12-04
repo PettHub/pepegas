@@ -47,17 +47,14 @@ public class CarController {
      * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
-
-
+            int i = 0;
             for (Automobile car : cars) {
                 car.move();
-                int i = 0;
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
-                frame.drawPanel.moveit(x, y);
-                ifHitWallChangeDirection(car, frame.drawPanel.hitWall());
-                isAboutToHitWall(car, frame.drawPanel.aboutToHitWall());
+                frame.drawPanel.moveit(x, y, i);
+                ifHitWallChangeDirection(car, frame.drawPanel.hitWall(i));
+                //isAboutToHitWall(car, frame.drawPanel.aboutToHitWall());
                 i++;
                 // repaint() calls the paintComponent method of the panel
                     frame.drawPanel.repaint();
@@ -115,8 +112,7 @@ public class CarController {
             private boolean isAboutToHitWall (Automobile car, String wallHit){
                 switch (wallHit) {
                     case "Upper":
-                        if ()
-                            break;
+                        break;
                     case "Lower":
                         break;
                     case "Left":
@@ -124,7 +120,8 @@ public class CarController {
                     case "Right":
                         break;
                 }
-            }
+            return true;
+        }
 
         }
 

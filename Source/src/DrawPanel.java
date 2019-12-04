@@ -33,16 +33,16 @@ public class DrawPanel extends JPanel {
     }
 
     String hitWall(int index) {
-        if (walls[0].rectangle.intersects(vehiclePoint)) {
+        if (walls[0].rectangle.intersects(vehiclePoint.get(index))) {
             return "Upper";
         }
-        if (walls[1].rectangle.intersects(volvoPoint)) {
+        if (walls[1].rectangle.intersects(vehiclePoint.get(index))) {
             return "Lower";
         }
-        if (walls[2].rectangle.intersects(volvoPoint)) {
+        if (walls[2].rectangle.intersects(vehiclePoint.get(index))) {
             return "Left";
         }
-        if (walls[3].rectangle.intersects(volvoPoint)) {
+        if (walls[3].rectangle.intersects(vehiclePoint.get(index))) {
             return "Right";
         }
         return "none";
