@@ -51,8 +51,6 @@ public class DrawPanel extends JPanel {
     String aboutToHitWall() {
         for (int i = 0; i < 4; i++) {
             Rectangle tmp = walls[i].rectangle;
-
-
             if (i == 0 && tmp.intersects(volvoPoint)) {
                 return "Upper";
             }
