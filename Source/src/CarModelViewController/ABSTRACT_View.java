@@ -1,5 +1,4 @@
 package CarModelViewController;
 
-public class NewView {
-    
+public class ABSTRACT_View {
 }
