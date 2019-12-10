@@ -13,7 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CarController extends JFrame{
+public class CarController extends JPanel{
     CarModel model;
     DrawPanel drawPanel = new DrawPanel(CarModel.getMapX(), CarModel.getMapY());
     JPanel controlPanel = new JPanel();
@@ -36,7 +36,6 @@ public class CarController extends JFrame{
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work
     private void initButtons() {
-        this.setTitle("Car sim");
         this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.add(drawPanel);
@@ -126,8 +125,6 @@ public class CarController extends JFrame{
                 model.addCar();
             }
         });
-        this.pack();
-
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame
@@ -135,17 +132,18 @@ public class CarController extends JFrame{
         // Make the frame visible
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public CarController(CarModel model) {
         this.model = model;
+        initButtons();
+        model.thingToPushToView = this;
     }
 
     public static void main(String[] args) {
         // Instance of this class
         CarModel model = new CarModel();
         CarController cc = new CarController(model);
-        //cc.model.views.add(new CarView("CarSim 2.0"));
+        cc.model.views.add(new CarView("CarSim 2.0"));
         // Start the timer
         model.timer.start();
     }

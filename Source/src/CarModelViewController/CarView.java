@@ -11,27 +11,12 @@ import java.awt.*;
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
-public class CarView extends ABSTRACT_View {
+public class CarView extends JFrame {
 
 
     // The controller member
 
-    DrawPanel drawPanel;
-    JPanel controlPanel = new JPanel();
-    JPanel gasPanel = new JPanel();
-    JSpinner gasSpinner = new JSpinner();
-    int gasAmount = 0;
-    JLabel gasLabel = new JLabel("Amount of gas");
-    JButton gasButton = new JButton("Gas");
-    JButton brakeButton = new JButton("Brake");
-    JButton turboOnButton = new JButton("Saab Turbo on");
-    JButton turboOffButton = new JButton("Saab Turbo off");
-    JButton liftBedButton = new JButton("Trucks.Scania Lift Bed");
-    JButton lowerBedButton = new JButton("Lower Lift Bed");
-
-    JButton startButton = new JButton("Start all cars");
-    JButton stopButton = new JButton("Stop all cars");
-
+    DrawPanel drawPanel = new DrawPanel(CarModel.getMapX(), CarModel.getMapY());
     // Constructor
     public CarView(String framename){
         initComponents(framename);
@@ -43,7 +28,7 @@ public class CarView extends ABSTRACT_View {
         this.setTitle(title);
         this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        //this.add(drawPanel);
+        this.add(drawPanel);
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
         // Make the frame pack all it's components by respecting the sizes if possible.

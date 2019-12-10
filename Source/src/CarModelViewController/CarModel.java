@@ -21,6 +21,7 @@ public class CarModel {
     private static final int mapX = 800;
     private static final int mapY = 800;
 
+    JPanel thingToPushToView;
     List<CarView> views = new ArrayList<>();
     List<Assoc> associations = new ArrayList<>();
     private final int delay = 50;
@@ -28,6 +29,7 @@ public class CarModel {
 
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            views.get(0).add(thingToPushToView);
             int i = 0;
             for (Assoc association : associations) {
                 association.automobile.move();
