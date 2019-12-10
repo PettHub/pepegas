@@ -1,11 +1,7 @@
 package CarModelViewController;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * This class represents the full view of the MVC pattern of your car simulator.
@@ -15,7 +11,7 @@ import java.awt.event.ActionListener;
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
-public class CarView extends JFrame{
+public class CarView extends ABSTRACT_View {
 
 
     // The controller member
@@ -38,7 +34,6 @@ public class CarView extends JFrame{
 
     // Constructor
     public CarView(String framename){
-        this.drawPanel = drawPanel;
         initComponents(framename);
     }
 
@@ -48,7 +43,7 @@ public class CarView extends JFrame{
         this.setTitle(title);
         this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        this.add(drawPanel);
+        //this.add(drawPanel);
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
         // Make the frame pack all it's components by respecting the sizes if possible.

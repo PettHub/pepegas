@@ -13,9 +13,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CarController {
+public class CarController extends JFrame{
     CarModel model;
-    DrawPanel drawPanel = new DrawPanel(CarModel.getMapX(), CarModel.getMapY()-240);
+    DrawPanel drawPanel = new DrawPanel(CarModel.getMapX(), CarModel.getMapY());
     JPanel controlPanel = new JPanel();
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
@@ -30,15 +30,16 @@ public class CarController {
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
     JButton addCarButton = new JButton("Create new car");
+
     // Constructor
 
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work
     private void initButtons() {
-        //this.setTitle("CarSim 2.0");
-        //this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
-        //this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        //this.add(drawPanel);
+        this.setTitle("Car sim");
+        this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
+        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        this.add(drawPanel);
         SpinnerModel spinnerModel = new SpinnerNumberModel(0, //initial value
                 0, //min
                 100, //max
@@ -53,7 +54,7 @@ public class CarController {
         gasPanel.setLayout(new BorderLayout());
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
-        //this.add(gasPanel);
+        this.add(gasPanel);
         controlPanel.setLayout(new GridLayout(2,4));
         controlPanel.add(gasButton, 0);
         controlPanel.add(turboOnButton, 1);
@@ -62,20 +63,20 @@ public class CarController {
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
         controlPanel.setPreferredSize(new Dimension((CarModel.getMapX()/2)+4, 200));
-        //this.add(controlPanel);
+        this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
         startButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
-        //this.add(startButton);
+        this.add(startButton);
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
         stopButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
-        //this.add(stopButton);
+        this.add(stopButton);
         addCarButton.setBackground(Color.GREEN);
         addCarButton.setForeground(Color.black);
         addCarButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
-        //this.add(addCarButton);
+        this.add(addCarButton);
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
 
@@ -124,18 +125,17 @@ public class CarController {
             public void actionPerformed(ActionEvent e) {
                 model.addCar();
             }
-        });/*
+        });
         this.pack();
 
         // Get the computer screen resolution
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame
-        .setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         // Make the frame visible
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        return drawPanel;*/
     }
     public CarController(CarModel model) {
         this.model = model;
@@ -145,9 +145,7 @@ public class CarController {
         // Instance of this class
         CarModel model = new CarModel();
         CarController cc = new CarController(model);
-        cc.model.views.add(new CarView("CarSim 2.0"));
-        cc.model.views.add(new )
-
+        //cc.model.views.add(new CarView("CarSim 2.0"));
         // Start the timer
         model.timer.start();
     }

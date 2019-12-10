@@ -16,6 +16,7 @@ import Cars.*;
 import Trucks.*;
 
 public class CarModel {
+
     private Random rm = new Random();
     private static final int mapX = 800;
     private static final int mapY = 800;
