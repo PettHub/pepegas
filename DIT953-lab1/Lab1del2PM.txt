@@ -20,10 +20,10 @@ del 1 bör ni göra detta först.
 
 == Uppgift a) ==
 
-Skapa en representation av en Scania-lastbil med modellnamn Scania. Ge den rimliga
-startvärden för relevanta fält. Lägg den i filen Scania.java i samma mapp.
+Skapa en representation av en Trucks.Scania-lastbil med modellnamn Trucks.Scania. Ge den rimliga
+startvärden för relevanta fält. Lägg den i filen Trucks.Scania.java i samma mapp.
 
-Scania ska införlivas i er arvs-hierarki från tidigare, men ha ytterligare
+Trucks.Scania ska införlivas i er arvs-hierarki från tidigare, men ha ytterligare
 funktionalitet: den har ett flak som kan höjas (tippas) och sänkas. Införliva
 detta i er design så att vi kan hålla reda på vilken vinkel flaket har för
 närvarande, samt funktioner för att höja och sänka det.
@@ -32,7 +32,7 @@ Följande förhållanden ska gälla:
 - Vinkeln på flaket kan inte vara lägre än 0 eller högre än 70.
 - Flaket kan enbart ha en annan vinkel än 0 om lastbilen står stilla.
 
-Lägg allt i Scania.java och skriv Javadoc för klassen och fälten. Gör minst ett
+Lägg allt i Trucks.Scania.java och skriv Javadoc för klassen och fälten. Gör minst ett
 JUnit-test i er Testklass.
 
 == Uppgift b) ==
@@ -41,7 +41,7 @@ Skapa en representation av en biltransport - dvs en långtradare som kan
 transportera bilar på flaket. Ge den ett valfritt modellnamn och filnamn.
 
 Biltransporten ska på lämpligt sätt införlivas i er arvshierarki från tidigare.
-Likt Scania-lastbilen har den ett "flak" i form av en ramp som går att höja och 
+Likt Trucks.Scania-lastbilen har den ett "flak" i form av en ramp som går att höja och
 sänka. Införliva detta i er design på lämpligt sätt.
 
 Bilar ska kunna lastas på och av biltransporten. Biltransporten har ett maximalt

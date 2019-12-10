@@ -18,11 +18,11 @@ godkänns i denna labb kommer senare att användas i Laboration 2.
 == Uppgift a) - Arv och gränssnitt ==
 
 Börja med att klona repot https://github.com/niklasbroberg/DIT953-lab1 och kika
-lite i det. För närvarande finns det två Java-filer, Volvo240.java och Saab95.java.
+lite i det. För närvarande finns det två Java-filer, Cars.Volvo240.java och Cars.Saab95.java.
 Just nu verkar klasserna ha ganska mycket gemensamt, eftersom båda representerar
 bilar.
 
-- Skapa en arvshierarki där Volvo240 och Saab95 ingår som eliminerar all
+- Skapa en arvshierarki där Cars.Volvo240 och Cars.Saab95 ingår som eliminerar all
 kod-duplicering och i görligaste mån följer open-closed-principen. Gör dessa
 ändringar utan att ändra på klassernas funktionalitet.
 
@@ -35,14 +35,14 @@ Se till att alla filer kompilerar och fortsätt till nästa uppgift.
 == Uppgift b) ==
 
 I denna uppgift fortsätter vi bygga på föregående genom att vi nu också
-implementerar ett interface kallat Movable.
+implementerar ett interface kallat Cars.Movable.
 
-- Skapa en fil Movable.java och ge interfacet följande metoder:
+- Skapa en fil Cars.Movable.java och ge interfacet följande metoder:
     void move();
     void turnLeft();
     void turnRight();
 
-- Se till att era bilar implementerar interfacet Movable, med någon lämplig
+- Se till att era bilar implementerar interfacet Cars.Movable, med någon lämplig
 intern representation av deras riktning och position. Metoden move ska fungera
 så att beroende på riktning ökas (eller minskas) bilens x- eller y-koordinat
 med dess currentSpeed.

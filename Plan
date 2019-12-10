@@ -1,0 +1,23 @@
+Plan
+
+Jätteviktig plan för att refactorisera koden
+
+OBS!!!!!!!
+
+
+
+
+
+
+Bryter mot ocp
+För att!!!
+
+
+Gruppera cartransportflak och cartransporttruck i sitt enga paket och resten av truckarna i ett annat. Detsamma med bilarna och verkstaden är också rätt unik och borde därmed också vara sin egen grej då det saknar tillämpningar hos de andra paketen förutom bilarna.
+Cars.Movable interface är bajs
+allt ska till carController, vehiclepoints ...
+
+
+punktplan för faktorisering
+* Gör det som står ovan i valfri ordning
+* Walls ska bort, går att bara ha instansvariabler

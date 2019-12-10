@@ -3,7 +3,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FlakTest {
-    Scania scania = new Scania();
+    Trucks.Scania scania = new Trucks.Scania();
 
 
     @Test
