@@ -14,7 +14,7 @@ För att!!!
 
 
 Gruppera cartransportflak och cartransporttruck i sitt enga paket och resten av truckarna i ett annat. Detsamma med bilarna och verkstaden är också rätt unik och borde därmed också vara sin egen grej då det saknar tillämpningar hos de andra paketen förutom bilarna.
-Movable interface är bajs
+Cars.Movable interface är bajs
 allt ska till carController, vehiclepoints ...
 
 

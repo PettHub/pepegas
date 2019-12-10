@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ScaniaTest {
-    Scania scania = new Scania();
+    Trucks.Scania scania = new Trucks.Scania();
     @Test
     void startEngine() throws Exception{
         scania.startEngine();
@@ -76,7 +76,7 @@ public class ScaniaTest {
     void attachToTruck() throws Exception{
         scania.flak.detachFromTruck();
         assertEquals(scania.flak, null);
-        scania.flak = new Flak(70);
+        scania.flak = new Trucks.Flak(70);
         scania.flak.attachToTruck(scania);
         assertNotEquals(scania.flak, null);
     }

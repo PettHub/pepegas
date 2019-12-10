@@ -4,9 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class CarTransportFlakTest {
 
-    CarTransportTruck CTT = new CarTransportTruck("BRummIs", 2);
-    Volvo240 bil1 = new Volvo240();
-    Saab95 bil2 = new Saab95();
+    CarTransport.CarTransportTruck CTT = new CarTransport.CarTransportTruck("BRummIs", 2);
+    Cars.Volvo240 bil1 = new Cars.Volvo240();
+    Cars.Saab95 bil2 = new Cars.Saab95();
 
     @Test
     void addCarToFlak() {

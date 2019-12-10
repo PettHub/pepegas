@@ -3,11 +3,11 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
 
 public class CarTransportTruckTest {
-    CarTransportTruck CTT = new CarTransportTruck("yeshello", 2);
+    CarTransport.CarTransportTruck CTT = new CarTransport.CarTransportTruck("yeshello", 2);
     @Test
     void move() throws Exception{
-        Volvo240 bil1 = new Volvo240();
-        Saab95 bil2 = new Saab95();
+        Cars.Volvo240 bil1 = new Cars.Volvo240();
+        Cars.Saab95 bil2 = new Cars.Saab95();
         CTT.flak.addCarToFlak(bil1);
         CTT.flak.addCarToFlak(bil2);
         assertEquals(CTT.getX(), 0.0);

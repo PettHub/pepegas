@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Volvo240Test {
 
-    Volvo240 bil = new Volvo240();
+    Cars.Volvo240 bil = new Cars.Volvo240();
     @Test
     void startEngine() throws Exception{
         bil.startEngine();

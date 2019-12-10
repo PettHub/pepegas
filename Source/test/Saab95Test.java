@@ -3,7 +3,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 class Saab95Test {
-    Saab95 bil = new Saab95();
+    Cars.Saab95 bil = new Cars.Saab95();
     @Test
     void startEngine() throws Exception{
         bil.startEngine();

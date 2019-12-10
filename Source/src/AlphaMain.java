@@ -10,10 +10,6 @@ import java.util.List;
 
 public class AlphaMain {
     public static void main(String[] args) {
-        Car bil = new Volvo240();
-        Verkstad<Volvo240> volvoVerkstad = new Verkstad<Volvo240>(4);
-        CarTransportTruck biltransport = new CarTransportTruck("bil", 2);
-        biltransport.detachFlak();
-        biltransport.attachFlak(new CarTransportFlak(5));
+
     }
 }
