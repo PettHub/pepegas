@@ -25,7 +25,7 @@ public class CarView extends JFrame {
     // TODO: Take a good look and make sure you understand how these methods and components work
     private void initComponents(String title, int x, int y) {
         this.setTitle(title);
-        this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
+        this.setPreferredSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize()));
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         this.add(drawPanel);
         // This actionListener is for the gas button only

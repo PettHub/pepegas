@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class CarController extends JPanel{
     CarModel model;
-    DrawPanel drawPanel = new DrawPanel(CarModel.getMapX(), CarModel.getMapY());
     JPanel controlPanel = new JPanel();
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
@@ -43,8 +42,7 @@ public class CarController extends JPanel{
     // TODO: Take a good look and make sure you understand how these methods and components work
     private void initButtons() {
         this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
-        this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        this.add(drawPanel);
+        this.setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
         SpinnerModel spinnerModel = new SpinnerNumberModel(0, //initial value
                 0, //min
                 100, //max
@@ -67,25 +65,25 @@ public class CarController extends JPanel{
         controlPanel.add(brakeButton, 3);
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
-        controlPanel.setPreferredSize(new Dimension((CarModel.getMapX()/2)+4, 200));
+        controlPanel.setPreferredSize(new Dimension((CarModel.getMapX()/3), 100));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
-        startButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
+        startButton.setPreferredSize(new Dimension(CarModel.getMapX()/6,100));
         this.add(startButton);
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
-        stopButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
+        stopButton.setPreferredSize(new Dimension(CarModel.getMapX()/6,100));
         this.add(stopButton);
         addCarButton.setBackground(Color.GREEN);
         addCarButton.setForeground(Color.black);
-        addCarButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
+        addCarButton.setPreferredSize(new Dimension(CarModel.getMapX()/6,100));
         this.add(addCarButton);
         carList.add(addVolvo, 0);
         carList.add(addSaab, 1);
         carList.add(addScania, 2);
-        carList.setPreferredSize(new Dimension((CarModel.getMapX()/2)+4, 200));
+        carList.setPreferredSize(new Dimension((CarModel.getMapX()/3), 100));
         carList.setVisible(false);
         this.add(carList);
         PURGE.setBackground(Color.RED);
