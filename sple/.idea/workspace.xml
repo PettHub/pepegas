@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../Source/src/CarModelViewController/Widget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/pics/Smurf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/pics/Smurf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/ImageDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/ImageDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spel/sample/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spel/sample/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Smurf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pics/Smurf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Model.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,8 +83,12 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1UnvTPtpt1ePMH0kPVUhoo00lnU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -81,8 +105,10 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RunManager" selected="Application.Controller">
@@ -226,21 +252,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.-559.2560.1400@0.0.1920.1040" timestamp="1576013106688" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1576013492649">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="674" y="354" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576051876454">
+      <screen x="67" y="27" width="1533" height="873" />
+    </state>
+    <state x="674" y="354" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1533.873@67.27.1533.873" timestamp="1576051876454" />
+    <state width="1487" height="219" key="GridCell.Tab.0.bottom" timestamp="1576053989731">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.-559.2560.1400@0.0.1920.1040" timestamp="1576013492649" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1576013492649">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1487" height="219" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576053989731" />
+    <state width="1487" height="219" key="GridCell.Tab.0.center" timestamp="1576053989730">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/1920.-559.2560.1400@0.0.1920.1040" timestamp="1576013492649" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1576013492649">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1487" height="219" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576053989730" />
+    <state width="1487" height="219" key="GridCell.Tab.0.left" timestamp="1576053989730">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/1920.-559.2560.1400@0.0.1920.1040" timestamp="1576013492649" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1576013492649">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1487" height="219" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576053989730" />
+    <state width="1487" height="219" key="GridCell.Tab.0.right" timestamp="1576053989730">
+      <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/1920.-559.2560.1400@0.0.1920.1040" timestamp="1576013492649" />
+    <state width="1487" height="219" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576053989730" />
   </component>
 </project>

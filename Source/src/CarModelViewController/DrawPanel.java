@@ -14,7 +14,7 @@ public class DrawPanel extends JPanel {
     // Just a single image, TODO: Generalize
     //BufferedImage = volvoImage;
     ArrayList<BufferedImage> vehicleImage = new ArrayList<>();
-
+    Assoc vehicle;
     // To keep track of a singel cars position
     Rectangle volvoPoint = new Rectangle();
     Wall[] walls = new Wall[4];
@@ -28,22 +28,22 @@ public class DrawPanel extends JPanel {
     }
 
     // TODO: Make this general for all cars
-    void moveit(int x, int y, int index) {
-        vehiclePoint.get(index).x = x;
-        vehiclePoint.get(index).y = y;
+    void moveit(Assoc assoc) {
+        assoc.rectangle.x = assoc.automobile.getX();
+        assoc.rectangle.y = assoc.automobile.getY();
     }
 
-    String hitWall(int index) {
-        if (walls[0].rectangle.intersects(vehiclePoint.get(index))) {
+    String hitWall(Rectangle r) {
+        if (walls[0].rectangle.intersects(r)) {
             return "Upper";
         }
-        if (walls[1].rectangle.intersects(vehiclePoint.get(index))) {
+        if (walls[1].rectangle.intersects(r)) {
             return "Lower";
         }
-        if (walls[2].rectangle.intersects(vehiclePoint.get(index))) {
+        if (walls[2].rectangle.intersects(r)) {
             return "Left";
         }
-        if (walls[3].rectangle.intersects(vehiclePoint.get(index))) {
+        if (walls[3].rectangle.intersects(r)) {
             return "Right";
         }
         return "none";
@@ -60,7 +60,6 @@ public class DrawPanel extends JPanel {
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.black);
         // Print an error message in case file is not found with a try/catch block
-        try {
             // You can remove the "pics" part if running outside of IntelliJ and
             // everything is in the same main folder.
             // volvoImage = ImageIO.read(new File("Cars.Volvo240.jpg"));
@@ -71,14 +70,6 @@ public class DrawPanel extends JPanel {
             //volvoImage = ImageIO.read(CarModelViewController.DrawPanel.class.getResourceAsStream("pics/Cars.Volvo240.jpg"));
             /*scaniaImage = ImageIO.read(CarModelViewController.DrawPanel.class.getResourceAsStream("pics/Trucks.Scania.jpg"));
             volvoImage = ImageIO.read(CarModelViewController.DrawPanel.class.getResourceAsStream("pics/Cars.Saab95.jpg"));*/
-            for (Rectangle i : vehiclePoint) {
-                vehicleImage.add(ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg")));
-                vehicleImage.add(ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg")));
-                vehicleImage.add(ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg")));
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
         for (BufferedImage image : vehicleImage) {
             setVehiclePoint();
             vehiclePoint.get(vehiclePoint.size()-1).width =image.getWidth();
@@ -92,16 +83,7 @@ public class DrawPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        g.drawImage(vehicle.bufferedImage, (int) vehicle.rectangle.getX() , (int) vehicle.rectangle.getY(), null); // see javadoc for more info on the parameters
 
-        /*for(int i = 0; i < vehicleImage.size(); i++) {
-            g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x, vehiclePoint.get(i).y + 100*i, null); // see javadoc for more info on the parameters
-
-            //g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x, vehiclePoint.get(i).y, null); // see javadoc for more info on the parameters
-        }*/
-        for(int i = 0; i < vehicleImage.size(); i++) {
-            g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x, vehiclePoint.get(i).y, null); // see javadoc for more info on the parameters
-
-            //g.drawImage(vehicleImage.get(i), vehiclePoint.get(i).x, vehiclePoint.get(i).y, null); // see javadoc for more info on the parameters
-        }
     }
 }

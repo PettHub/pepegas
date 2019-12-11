@@ -14,4 +14,8 @@ public class Assoc {
         this.rectangle = rectangle;
         this.bufferedImage = bufferedImage;
     }
+    void updateAllLocations(){
+        rectangle.x = this.automobile.getX();
+        rectangle.y = this.automobile.getY();
+    }
 }

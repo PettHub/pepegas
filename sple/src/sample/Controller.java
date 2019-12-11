@@ -1,7 +1,5 @@
 package sample;
 
-import com.sun.security.auth.module.JndiLoginModule;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -57,7 +55,6 @@ public class Controller extends JPanel {
         exit.setBackground(Color.LIGHT_GRAY);
         this.add(exit);
         advanced.setVisible(false);
-        start.setVisible(true);
 
         back.addActionListener(new ActionListener() {
             @Override
