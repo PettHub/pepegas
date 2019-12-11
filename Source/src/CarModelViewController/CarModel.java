@@ -17,39 +17,58 @@ public class CarModel {
 
     public CarModel(CarView frame) {
         this.frame = frame;
+        walls[0] = new Wall(-400, -400, getMapX()*2, 400); //tak
+        walls[1] = new Wall(-400, getMapY(), getMapX()*2, 400);//botten
+        walls[2] = new Wall(-400, 0, 400, getMapY());//vänster vägg
+        walls[3] = new Wall(getMapX(), -400, 400, getMapY()*2);//höger vägg
     }
-
-    void addAllTheWidgets() {
-        for (JPanel panel : views) {
-            this.frame.add(panel);
-        }
-    }
-
-    private Random rm = new Random();
+    Wall[] walls = new Wall[4];
     private static final int mapX = 800;
-    private static final int mapY = 800;
-    Widget carCounter;
+    private static final int mapY = 600;
+    List<Widget> widgets = new ArrayList<>();
     CarView frame;
-    List<JPanel> views = new ArrayList<>();
     List<Assoc> associations = new ArrayList<>();
     private final int delay = 50;
     Timer timer = new Timer(delay, new TimerListener());
 
     void addWidgetToView(Assoc assoc){
-        frame.add(new Widget(assoc));
+        Widget tmp = new Widget(assoc);
+        frame.add(tmp);
+        widgets.add(tmp);
+
+    }
+    void updateAllTheWidgets(){
+        for (Widget widget : widgets){
+            widget.update();
+        }
     }
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Assoc association : associations) {
                 association.automobile.move();
-                frame.drawPanel.vehicle = association;
+                frame.drawPanel.vehicle = associations;
                 frame.drawPanel.moveit(association);
-                ifHitWallChangeDirection(association.automobile, frame.drawPanel.hitWall(association.rectangle));
+                ifHitWallChangeDirection(association.automobile, hitWall(association.rectangle));
                 // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
             }
+            frame.drawPanel.repaint();
         }
 
+        String hitWall(Rectangle r) {
+            if (walls[0].rectangle.intersects(r)) {
+                return "Upper";
+            }
+            if (walls[1].rectangle.intersects(r)) {
+                return "Lower";
+            }
+            if (walls[2].rectangle.intersects(r)) {
+                return "Left";
+            }
+            if (walls[3].rectangle.intersects(r)) {
+                return "Right";
+            }
+            return "none";
+        }
         private void ifHitWallChangeDirection(Automobile car, String wallHit) {
             double pi = Math.PI;
             double difference;
@@ -101,16 +120,22 @@ public class CarModel {
     }
 
     void assocFactoryVolvo () throws IOException {
-        if (associations.size()<10)
-            associations.add(new Assoc(new Volvo240(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Volvo240.jpg"))));
+        if (associations.size()<10) {
+            associations.add(new Assoc(new Volvo240(), new Rectangle(100, 60), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Volvo240.jpg"))));
+            addWidgetToView(associations.get(associations.size() - 1));
+        }
     }
     void assocFactorySaab () throws IOException {
-        if (associations.size()<10)
-            associations.add(new Assoc(new Saab95(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Saab95.jpg"))));
+        if (associations.size()<10){
+            associations.add(new Assoc(new Saab95(), new Rectangle(100, 60), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Saab95.jpg"))));
+            addWidgetToView(associations.get(associations.size()-1));
+        }
     }
     void assocFactoryScania () throws IOException {
-        if (associations.size()<10)
-            associations.add(new Assoc(new Scania(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Scania.jpg"))));
+        if (associations.size() < 10) {
+            associations.add(new Assoc(new Scania(), new Rectangle(100, 60), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Scania.jpg"))));
+            addWidgetToView(associations.get(associations.size() - 1));
+        }
     }
     void gas(int amount) {
         double gas = ((double) amount) / 100;

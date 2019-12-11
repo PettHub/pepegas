@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.*;
+import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -12,20 +13,10 @@ import javax.swing.*;
 public class DrawPanel extends JPanel {
 
     // Just a single image, TODO: Generalize
-    //BufferedImage = volvoImage;
-    ArrayList<BufferedImage> vehicleImage = new ArrayList<>();
-    Assoc vehicle;
-    // To keep track of a singel cars position
-    Rectangle volvoPoint = new Rectangle();
-    Wall[] walls = new Wall[4];
+    List<Assoc> vehicle = new ArrayList<>();
 
 
     // TODO: Make this genereal for all cars
-    ArrayList<Rectangle> vehiclePoint = new ArrayList<Rectangle>();
-
-    public void setVehiclePoint() {
-        this.vehiclePoint.add(new Rectangle());
-    }
 
     // TODO: Make this general for all cars
     void moveit(Assoc assoc) {
@@ -33,28 +24,10 @@ public class DrawPanel extends JPanel {
         assoc.rectangle.y = assoc.automobile.getY();
     }
 
-    String hitWall(Rectangle r) {
-        if (walls[0].rectangle.intersects(r)) {
-            return "Upper";
-        }
-        if (walls[1].rectangle.intersects(r)) {
-            return "Lower";
-        }
-        if (walls[2].rectangle.intersects(r)) {
-            return "Left";
-        }
-        if (walls[3].rectangle.intersects(r)) {
-            return "Right";
-        }
-        return "none";
-    }
     // Initializes the panel and reads the images
     public DrawPanel(int x, int y) {
 
-        walls[0] = new Wall(-400, -400, 1600, 400);
-        walls[1] = new Wall(-400, 800 - 240, 1600, 400);
-        walls[2] = new Wall(-400, 0, 400, 800 - 240);
-        walls[3] = new Wall(800, 0, 400, 800 - 240);
+
 
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
@@ -70,19 +43,15 @@ public class DrawPanel extends JPanel {
             //volvoImage = ImageIO.read(CarModelViewController.DrawPanel.class.getResourceAsStream("pics/Cars.Volvo240.jpg"));
             /*scaniaImage = ImageIO.read(CarModelViewController.DrawPanel.class.getResourceAsStream("pics/Trucks.Scania.jpg"));
             volvoImage = ImageIO.read(CarModelViewController.DrawPanel.class.getResourceAsStream("pics/Cars.Saab95.jpg"));*/
-        for (BufferedImage image : vehicleImage) {
-            setVehiclePoint();
-            vehiclePoint.get(vehiclePoint.size()-1).width =image.getWidth();
-            vehiclePoint.get(vehiclePoint.size()-1).height =image.getHeight();
         }
-    }
 
     // This method is called each time the panel updates/refreshes/repaints itself
     // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-        g.drawImage(vehicle.bufferedImage, (int) vehicle.rectangle.getX() , (int) vehicle.rectangle.getY(), null); // see javadoc for more info on the parameters
+        for (Assoc assoc : vehicle){
+        g.drawImage(assoc.bufferedImage, (int) assoc.rectangle.getX() , (int) assoc.rectangle.getY(), null); // see javadoc for more info on the parameters
+        }
     }
 }
