@@ -1,5 +1,6 @@
 package CarModelViewController;
 
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +26,7 @@ public class CarModel {
     List<Assoc> associations = new ArrayList<>();
     private final int delay = 50;
     Timer timer = new Timer(delay, new TimerListener());
-
+//KOLLA MED OLIVER OM DETTA ÖVEr oCH UNDER ÄR EKVIVALETNT MED UPDATE
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int i = 0;
@@ -40,6 +41,7 @@ public class CarModel {
                 views.get(0).drawPanel.repaint();
             }
         }
+        //Tänker att man lägger in något här ovan så att den säger till att den i NewView skriver ut grejer. drawPanel?
 
         private void ifHitWallChangeDirection(Automobile car, String wallHit) {
             double pi = Math.PI;
