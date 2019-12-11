@@ -5,9 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.rmi.server.ExportException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,29 +15,38 @@ import Trucks.*;
 
 public class CarModel {
 
+    public CarModel(CarView frame) {
+        this.frame = frame;
+    }
+
+    void addAllTheWidgets() {
+        for (JPanel panel : views) {
+            this.frame.add(panel);
+        }
+    }
+
     private Random rm = new Random();
     private static final int mapX = 800;
     private static final int mapY = 800;
-
-    JPanel thingToPushToView;
-    List<CarView> views = new ArrayList<>();
+    Widget carCounter;
+    CarView frame;
+    List<JPanel> views = new ArrayList<>();
     List<Assoc> associations = new ArrayList<>();
     private final int delay = 50;
     Timer timer = new Timer(delay, new TimerListener());
 
+    void addWidgetToView(Assoc assoc){
+        frame.add(new Widget(assoc));
+    }
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            views.get(0).add(thingToPushToView);
-            int i = 0;
             for (Assoc association : associations) {
                 association.automobile.move();
-                int x = (int) Math.round(association.automobile.getX());
-                int y = (int) Math.round(association.automobile.getY());
-                views.get(0).drawPanel.moveit(x, y, i);
-                ifHitWallChangeDirection(association.automobile, views.get(0).drawPanel.hitWall(i));
-                i++;
+                frame.drawPanel.vehicle = association;
+                frame.drawPanel.moveit(association);
+                ifHitWallChangeDirection(association.automobile, frame.drawPanel.hitWall(association.rectangle));
                 // repaint() calls the paintComponent method of the panel
-                views.get(0).drawPanel.repaint();
+                frame.drawPanel.repaint();
             }
         }
 
@@ -92,34 +99,18 @@ public class CarModel {
             }
         }
     }
-    void addCar(){
-        try {
-            switch (rm.nextInt() % 3) {
-                case 1:
-                    assocFactoryVolvo();
-                    break;
-                case 2:
-                    assocFactorySaab();
-                    break;
-                case 0:
-                    assocFactoryScania();
-                    break;
-            }
-        }
-        catch (IOException ex){ ex.printStackTrace();}
-    }
 
     void assocFactoryVolvo () throws IOException {
         if (associations.size()<10)
-            associations.add(new Assoc(new Volvo240(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("../pics/Volvo240.jpg"))));
+            associations.add(new Assoc(new Volvo240(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Volvo240.jpg"))));
     }
     void assocFactorySaab () throws IOException {
         if (associations.size()<10)
-            associations.add(new Assoc(new Saab95(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("../pics/Saab95.jpg"))));
+            associations.add(new Assoc(new Saab95(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Saab95.jpg"))));
     }
     void assocFactoryScania () throws IOException {
         if (associations.size()<10)
-            associations.add(new Assoc(new Scania(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("../pics/Scania.jpg"))));
+            associations.add(new Assoc(new Scania(), new Rectangle(2, 4), ImageIO.read(CarModel.class.getResourceAsStream("/pics/Scania.jpg"))));
     }
     void gas(int amount) {
         double gas = ((double) amount) / 100;

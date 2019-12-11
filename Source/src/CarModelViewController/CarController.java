@@ -12,6 +12,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class CarController extends JPanel{
     CarModel model;
@@ -30,7 +31,10 @@ public class CarController extends JPanel{
     JButton startButton = new JButton("Start all cars");
     JButton stopButton = new JButton("Stop all cars");
     JButton addCarButton = new JButton("Create new car");
-
+    JPanel carList = new JPanel();
+    JButton addVolvo = new JButton("Volvo240");
+    JButton addSaab = new JButton("Saab95");
+    JButton addScania = new JButton("Scania");
     // Constructor
 
     // Sets everything in place and fits everything
@@ -76,6 +80,12 @@ public class CarController extends JPanel{
         addCarButton.setForeground(Color.black);
         addCarButton.setPreferredSize(new Dimension(CarModel.getMapX()/5-15,200));
         this.add(addCarButton);
+        carList.add(addVolvo, 0);
+        carList.add(addSaab, 1);
+        carList.add(addScania, 2);
+        carList.setPreferredSize(new Dimension((CarModel.getMapX()/2)+4, 200));
+        carList.setVisible(false);
+        this.add(carList);
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
 
@@ -122,13 +132,50 @@ public class CarController extends JPanel{
         addCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                model.addCar();
+                addCarButton.setVisible(false);
+                carList.setVisible(true);
+            }
+        });
+        addVolvo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    model.assocFactoryVolvo();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                addCarButton.setVisible(true);
+                carList.setVisible(false);
+            }
+        });
+        addSaab.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    model.assocFactorySaab();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                addCarButton.setVisible(true);
+                carList.setVisible(false);
+            }
+        });
+        addScania.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    model.assocFactoryScania();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                addCarButton.setVisible(true);
+                carList.setVisible(false);
             }
         });
         // Get the computer screen resolution
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        //Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        //this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         // Make the frame visible
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
@@ -136,14 +183,14 @@ public class CarController extends JPanel{
     public CarController(CarModel model) {
         this.model = model;
         initButtons();
-        model.thingToPushToView = this;
     }
 
     public static void main(String[] args) {
         // Instance of this class
-        CarModel model = new CarModel();
+        CarModel model = new CarModel(new CarView("Car sim 2.0", CarModel.getMapX(), CarModel.getMapY()));
         CarController cc = new CarController(model);
-        cc.model.views.add(new CarView("CarSim 2.0"));
+        cc.model.frame.add(cc);
+        cc.model.frame.setVisible(true);
         // Start the timer
         model.timer.start();
     }

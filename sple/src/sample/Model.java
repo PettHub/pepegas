@@ -2,14 +2,13 @@ package sample;
 
 
 import javax.swing.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 
 public class Model {
     int x = 800;
-    int y = 700;
+    int y = 720;
     Timer timer = new Timer();
     ImageDisplay im;
     View view = new View(x, y);
