@@ -161,6 +161,10 @@ public class CarModel {
         }
     }
 
+    void PURGE() {
+        associations = null;
+    }
+
     public static int getMapX() {
         return mapX;
     }
