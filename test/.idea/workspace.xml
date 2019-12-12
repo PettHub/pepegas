@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2f62f5b-aa10-43e5-9c44-6561e2ccdb6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/Assoc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarModel$TimerListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/DrawPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/Wall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/Widget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/Assoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/Assoc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarController/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarView/CarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarView/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/Widget.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarView/Widget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/test/combined.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/combined.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/test/view1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/view1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/test/view2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/view2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/combined.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/combined.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -230,6 +230,8 @@ public class CarModel extends Observable {
         while (associations.size() > 0){
             associations.remove(0);
         }
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public static int getMapX() {
