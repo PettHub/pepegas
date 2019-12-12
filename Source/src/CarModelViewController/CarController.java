@@ -34,6 +34,8 @@ public class CarController extends JPanel{
     JButton addVolvo = new JButton("Volvo240");
     JButton addSaab = new JButton("Saab95");
     JButton addScania = new JButton("Scania");
+    JButton PURGE = new JButton("PURGE");
+
     // Constructor
 
     // Sets everything in place and fits everything
@@ -84,6 +86,10 @@ public class CarController extends JPanel{
         carList.setPreferredSize(new Dimension((CarModel.getMapX()/3), 100));
         carList.setVisible(false);
         this.add(carList);
+        PURGE.setBackground(Color.RED);
+        PURGE.setForeground(Color.blue);
+        PURGE.setPreferredSize(new Dimension(CarModel.getMapX(),100));
+        this.add(PURGE);
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
 
@@ -124,6 +130,13 @@ public class CarController extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 model.lowerBed();
+            }
+        });
+
+        PURGE.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.PURGE();
             }
         });
 
@@ -170,6 +183,7 @@ public class CarController extends JPanel{
                 carList.setVisible(false);
             }
         });
+
         // Get the computer screen resolution
         //Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         // Center the frame

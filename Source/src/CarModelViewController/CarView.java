@@ -2,7 +2,6 @@ package CarModelViewController;
 
 import javax.swing.*;
 import java.awt.*;
-
 /**
  * This class represents the full view of the MVC pattern of your car simulator.
  * It initializes with being center on the screen and attaching it's controller in it's state.

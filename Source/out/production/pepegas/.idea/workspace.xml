@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Module 'src'" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3794a339-4112-4db1-89e0-1de0562fe2de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Source.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Source.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="07b2c6a5-53da-4008-8abd-4e1e236170e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,15 +13,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1TKXKCGWEvEf6ZpcYrSIbcsfFXJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1TTPp6oNbbXylXWltxNwdStP0sa" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../CHALMERS/Ettan/OOP" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -35,16 +39,18 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="CarController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CarController" />
-      <module name="Source" />
+    <configuration name="test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CarController" />
+        <item itemvalue="JUnit.test" />
       </list>
     </recent_temporary>
   </component>
@@ -53,11 +59,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3794a339-4112-4db1-89e0-1de0562fe2de" name="Default Changelist" comment="" />
-      <created>1573209694805</created>
+      <changelist id="07b2c6a5-53da-4008-8abd-4e1e236170e0" name="Default Changelist" comment="" />
+      <created>1573481291215</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573209694805</updated>
+      <updated>1573481291215</updated>
     </task>
     <servers />
   </component>
