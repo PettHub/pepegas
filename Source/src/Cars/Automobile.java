@@ -157,6 +157,7 @@ public abstract class Automobile implements Movable {
      */
     private void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+        //System.out.println(currentSpeed);
     }
 
     /**
