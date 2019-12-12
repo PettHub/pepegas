@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2f62f5b-aa10-43e5-9c44-6561e2ccdb6b" name="Default Changelist" comment="" />
+    <list default="true" id="e2f62f5b-aa10-43e5-9c44-6561e2ccdb6b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/Assoc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarModel$TimerListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/DrawPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/Wall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/Widget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/Assoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/Assoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarController/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarView/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarView/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarModelViewController/Widget.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarView/Widget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test/combined.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/combined.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test/view1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/view1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/test/view2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/test/view2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/combined.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/combined.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view2.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +50,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1UnBaqAHSSj9bhylC8Z9PLUSvG2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,8 +62,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="combined" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="combined" />
       <module name="test" />
@@ -33,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.combined" />
       </list>
     </recent_temporary>
@@ -63,29 +113,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1575983090193">
+    <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1576158757339">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1575983090193" />
+    <state x="641" y="181" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1533.873@67.27.1533.873" timestamp="1576158757339" />
     <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575982717226">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
     <state x="616" y="220" width="424" height="484" key="FileChooserDialogImpl/67.27.1533.873@67.27.1533.873" timestamp="1575982717226" />
-    <state width="721" height="219" key="GridCell.Tab.0.bottom" timestamp="1575983881935">
+    <state width="1487" height="219" key="GridCell.Tab.0.bottom" timestamp="1576159380382">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="721" height="219" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1575983881935" />
-    <state width="721" height="219" key="GridCell.Tab.0.center" timestamp="1575983881934">
+    <state width="1487" height="219" key="GridCell.Tab.0.bottom/67.27.1533.873@67.27.1533.873" timestamp="1576159380382" />
+    <state width="1487" height="219" key="GridCell.Tab.0.center" timestamp="1576159380381">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="721" height="219" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1575983881934" />
-    <state width="721" height="219" key="GridCell.Tab.0.left" timestamp="1575983881934">
+    <state width="1487" height="219" key="GridCell.Tab.0.center/67.27.1533.873@67.27.1533.873" timestamp="1576159380381" />
+    <state width="1487" height="219" key="GridCell.Tab.0.left" timestamp="1576159380380">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="721" height="219" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1575983881934" />
-    <state width="721" height="219" key="GridCell.Tab.0.right" timestamp="1575983881934">
+    <state width="1487" height="219" key="GridCell.Tab.0.left/67.27.1533.873@67.27.1533.873" timestamp="1576159380380" />
+    <state width="1487" height="219" key="GridCell.Tab.0.right" timestamp="1576159380381">
       <screen x="67" y="27" width="1533" height="873" />
     </state>
-    <state width="721" height="219" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1575983881934" />
+    <state width="1487" height="219" key="GridCell.Tab.0.right/67.27.1533.873@67.27.1533.873" timestamp="1576159380381" />
   </component>
 </project>

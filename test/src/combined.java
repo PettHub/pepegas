@@ -2,9 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 
 
+
 public class combined extends JFrame {
     int x = 600;
     int y = 400;
+
     public combined(int x, int y) {
         this.setTitle("JFrameCenter Position");
         this.add(new JLabel("JFrame set to center of the screen", SwingConstants.CENTER), BorderLayout.CENTER);
@@ -13,6 +15,7 @@ public class combined extends JFrame {
         this.setLocationRelativeTo(null); // this method display the JFrame to center position of a screen
         this.setVisible(true);
     }
+
     public static void main(String[] args) {
         view1 v1 = new view1(100, 100);
         view2 v2 = new view2(50, 200);
@@ -21,4 +24,5 @@ public class combined extends JFrame {
         comb.add(v2);
         comb.setVisible(true);
     }
+
 }
