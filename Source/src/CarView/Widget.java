@@ -31,7 +31,7 @@ public class Widget extends JPanel implements Observer {
         this.add(tmp);
     }
     void updateCars(){
-        //PURGE();
+        PURGE();
         for (int i = 0; i<assocs.size(); i++){
             label.get(i).setText(assocs.get(i).getAutomobile().getModelName() + " : " + Math.round(assocs.get(i).getAutomobile().getCurrentSpeed()));
             this.add(label.get(i));
@@ -45,6 +45,7 @@ public class Widget extends JPanel implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
+        if (world.associations.size()>0)
     addCar(world.associations.get(world.associations.size()-1));
     updateCars();
     }
