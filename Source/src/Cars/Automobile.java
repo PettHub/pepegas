@@ -209,6 +209,10 @@ public abstract class Automobile implements Movable {
         return currentSpeed;
     }
 
+    public void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
     public void addDegreesToDirection(double degreeChange) {
         if (direction + degreeChange <= 2 * Math.PI) {
             direction += degreeChange;

@@ -32,18 +32,18 @@ public class CarModel {
     private final int delay = 50;
     Timer timer = new Timer(delay, new TimerListener());
     void addWidgetToView(Assoc assoc){
-        frame.add(new Widget(assoc));
+        //frame.add(new Widget(assoc));
         Widget tmp = new Widget(assoc);
-        frame.add(tmp);
         widgets.add(tmp);
-
+        frame.add(tmp);
     }
-    void updateAllTheWidgets(){
-        for (Widget widget : widgets){
-            widget.update();
-        }
-    }
-    private class TimerListener implements ActionListener {
+   void updateSpeedWidgets() {
+       for (Widget widget : widgets) {
+           widget.update();
+           frame.add(widget);
+       }
+   }
+   private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (Assoc association : associations) {
                 association.automobile.move();
@@ -52,7 +52,9 @@ public class CarModel {
                 ifHitWallChangeDirection(association.automobile, hitWall(association.rectangle));
                 // repaint() calls the paintComponent method of the panel
             }
+            updateSpeedWidgets();
             frame.drawPanel.repaint();
+
         }
         //Tänker att man lägger in något här ovan så att den säger till att den i NewView skriver ut grejer. drawPanel?
 
@@ -81,9 +83,11 @@ public class CarModel {
                     if (car.getDirection() >= 1.5 * pi) {
                         difference = car.getDirection() - 1.5 * pi;
                         car.setDirection(0.5 * pi - difference);
+                                    car.setCurrentSpeed(0);
                     } else {
                         difference = 1.5 * pi - car.getDirection();
                         car.setDirection(0.5 * pi + difference);
+                        car.setCurrentSpeed(0);
                     }
                     car.setY(0);
                     break;
@@ -95,15 +99,19 @@ public class CarModel {
                         difference = 0.5 * pi - car.getDirection();
                         car.setDirection(1.5 * pi + difference);
                     }
-                    car.setY(800 - (240 + 60));
+                    car.setCurrentSpeed(0);
+                    //car.setY(800 - (240 + 60));
+                    car.setY(800-260);
                     break;
                 case "Left":
                     if (car.getDirection() >= 1 * pi) {
                         difference = car.getDirection() - 1 * pi;
                         car.setDirection(2 * pi - difference);
+                        car.setCurrentSpeed(0);
                     } else {
                         difference = 1 * pi - car.getDirection();
                         car.setDirection(difference);
+                        car.setCurrentSpeed(0);
                     }
                     car.setX(0);
                     break;
@@ -111,10 +119,13 @@ public class CarModel {
                     if (car.getDirection() >= 0 * pi) {
                         difference = car.getDirection();
                         car.setDirection(1 * pi - difference);
+                        car.setCurrentSpeed(0);
                     } else if (car.getDirection() <= 2 * pi) {
                         difference = 2 * pi - car.getDirection();
                         car.setDirection(difference + pi);
+                        car.setCurrentSpeed(0);
                     }
+                    //car.setX(800 - 100);
                     car.setX(800 - 100);
                     break;
             }
@@ -188,7 +199,21 @@ public class CarModel {
     }
 
     void PURGE() {
-        associations = null;
+
+        /*int size = frame.drawPanel.vehicle.size();
+        for (int i = 0; i < size; i++){
+        frame.drawPanel.vehicle.remove(i);
+        associations.remove(i);
+        }*/
+        for (Widget widget : widgets){
+            widget.PURGE();
+        }
+        while (associations.size() > 0){
+            frame.drawPanel.vehicle.remove(0);
+            associations.remove(0);
+            widgets.remove(0);
+        }
+
     }
 
     public static int getMapX() {
