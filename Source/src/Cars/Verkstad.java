@@ -9,6 +9,7 @@ public class Verkstad <A extends Car>{
     public Verkstad(int maxLimit) {
         this.maxLimit = maxLimit;
     }
+
     public void leaveCarAtShop(A bil){
         if (currentCars.size()<maxLimit){
             currentCars.add(bil);
