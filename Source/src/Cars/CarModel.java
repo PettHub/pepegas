@@ -74,8 +74,8 @@ public class CarModel extends Observable {
                 moveit(association);
                 ifHitWallChangeDirection(association.automobile, hitWall(association.rectangle));
                 // repaint() calls the paintComponent method of the panel
-                this.setChanged();
-                this.notifyObservers();
+                /*this.setChanged();
+                this.notifyObservers();*/
             }
             this.setChanged();
             this.notifyObservers();
@@ -190,9 +190,9 @@ public class CarModel extends Observable {
     }
 
     public void brake(int amount) {
-        double brake = ((double) amount) / 100;
+        double brake = ((double) amount) / 100.0;
         for (Assoc association : associations) {
-            association.automobile.brake(amount);
+            association.automobile.brake(brake);
         }
         this.setChanged();
         this.notifyObservers();
