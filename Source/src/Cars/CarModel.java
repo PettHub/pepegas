@@ -210,36 +210,41 @@ public class CarModel extends Observable {
 
     public void setTurboOn() {
         for (Assoc association : associations) {
+            association.automobile.setTurboOn();/*
             if (association.automobile instanceof Saab95) {
                 ((Saab95) association.automobile).setTurboOn();
-            }
+            }*/
         }
         
     }
 
     public void setTurboOff() {
         for (Assoc association : associations) {
+            association.automobile.setTurboOff();/*
             if (association.automobile instanceof Saab95) {
                 ((Saab95) association.automobile).setTurboOff();
-            }
+            }*/
         }
     }
 
     public void lowerBed() {
         for (Assoc association : associations) {
+            association.automobile.lowerFlak();
+            /*
             if (association.automobile instanceof Scania) {
                 if (((Scania) association.automobile).flak != null)
                     ((Scania) association.automobile).flak.lowerFlak();
-            }
+            }*/
         }
     }
 
     public void raiseBed() {
         for (Assoc association : associations) {
+            association.automobile.raiseFlak();/*
             if (association.automobile instanceof Scania) {
                 if (((Scania) association.automobile).flak != null)
                     ((Scania) association.automobile).flak.raiseFlak();
-            }
+            }*/
         }
     }
 
