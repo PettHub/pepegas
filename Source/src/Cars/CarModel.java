@@ -196,6 +196,16 @@ public class CarModel extends Observable {
         this.notifyObservers();
     }
 
+    void stop(){
+        for (Assoc association : associations) {
+            association.automobile.stopEngine();
+        }
+    }
+    void start(){
+        for (Assoc association : associations) {
+            association.automobile.startEngine();
+        }}
+
     public void setTurboOn() {
         for (Assoc association : associations) {
             if (association.automobile instanceof Saab95) {
@@ -246,4 +256,6 @@ public class CarModel extends Observable {
     public static int getMapY() {
         return mapY;
     }
+
+
 }

@@ -27,13 +27,13 @@ public class Flak implements IsAttachableToTruck{
     }
 
     public void lowerFlak(){
-        if (this.currentSpeed == 0) {
+       // if (this.currentSpeed == 0) {
             if (angle - 10 < 0) {
                 angle = 0;
                 System.out.println("Max angle");
             } else
                 angle -= 10;
-        }
+     //   }
     }
     public void raiseFlak() {
         if (this.currentSpeed == 0) {

@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class CarController extends JPanel{
+public class CarController extends JPanel {
     CarModel model;
     JPanel controlPanel = new JPanel();
     JPanel gasPanel = new JPanel();
@@ -44,7 +44,7 @@ public class CarController extends JPanel{
     // Sets everything in place and fits everything
     // TODO: Take a good look and make sure you understand how these methods and components work
     private void initButtons() {
-        this.setPreferredSize(new Dimension(CarModel.getMapX(),CarModel.getMapY()));
+        this.setPreferredSize(new Dimension(CarModel.getMapX(), CarModel.getMapY()));
         this.setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
         SpinnerModel spinnerModel = new SpinnerNumberModel(0, //initial value
                 0, //min
@@ -53,7 +53,7 @@ public class CarController extends JPanel{
         gasSpinner = new JSpinner(spinnerModel);
         gasSpinner.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+                gasAmount = (int) ((JSpinner) e.getSource()).getValue();
             }
         });
 
@@ -61,32 +61,32 @@ public class CarController extends JPanel{
         gasPanel.add(gasLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
         this.add(gasPanel);
-        controlPanel.setLayout(new GridLayout(2,4));
+        controlPanel.setLayout(new GridLayout(2, 4));
         controlPanel.add(gasButton, 0);
         controlPanel.add(turboOnButton, 1);
         controlPanel.add(liftBedButton, 2);
         controlPanel.add(brakeButton, 3);
         controlPanel.add(turboOffButton, 4);
         controlPanel.add(lowerBedButton, 5);
-        controlPanel.setPreferredSize(new Dimension((CarModel.getMapX()/3), 100));
+        controlPanel.setPreferredSize(new Dimension((CarModel.getMapX() / 3), 100));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
         startButton.setBackground(Color.blue);
         startButton.setForeground(Color.green);
-        startButton.setPreferredSize(new Dimension(CarModel.getMapX()/6,100));
+        startButton.setPreferredSize(new Dimension(CarModel.getMapX() / 6, 100));
         this.add(startButton);
         stopButton.setBackground(Color.red);
         stopButton.setForeground(Color.black);
-        stopButton.setPreferredSize(new Dimension(CarModel.getMapX()/6,100));
+        stopButton.setPreferredSize(new Dimension(CarModel.getMapX() / 6, 100));
         this.add(stopButton);
         addCarButton.setBackground(Color.GREEN);
         addCarButton.setForeground(Color.black);
-        addCarButton.setPreferredSize(new Dimension(CarModel.getMapX()/6,100));
+        addCarButton.setPreferredSize(new Dimension(CarModel.getMapX() / 6, 100));
         this.add(addCarButton);
         carList.add(addVolvo, 0);
         carList.add(addSaab, 1);
         carList.add(addScania, 2);
-        carList.setPreferredSize(new Dimension((CarModel.getMapX()/3), 100));
+        carList.setPreferredSize(new Dimension((CarModel.getMapX() / 3), 100));
         carList.setVisible(false);
         this.add(carList);
         PURGE.setBackground(Color.RED);
@@ -106,6 +106,18 @@ public class CarController extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 model.brake(gasAmount);
+            }
+        });
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.start();
+            }
+        });
+        stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.stop();
             }
         });
         turboOnButton.addActionListener(new ActionListener() {
@@ -150,6 +162,8 @@ public class CarController extends JPanel{
                 carList.setVisible(true);
             }
         });
+
+
         addVolvo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -195,6 +209,7 @@ public class CarController extends JPanel{
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
     }
+
     public CarController(CarModel model) {
         this.model = model;
         initButtons();
