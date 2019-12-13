@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2f62f5b-aa10-43e5-9c44-6561e2ccdb6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Source/src/Cars/ICanManipulateFlak.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Source/src/Cars/IsTurboable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$13.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/CarModelViewController/CarModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/Cars/Automobile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/Cars/Automobile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/META-INF/pepegas.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/META-INF/pepegas.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/out/production/pepegas/Trucks/Flak.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/out/production/pepegas/Trucks/Flak.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/CarController/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/CarController/CarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/src/Cars/Automobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/Automobile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/src/Trucks/Flak.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Trucks/Flak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/Trucks/IsAttachableToTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Trucks/IsAttachableToTruck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Source/src/Trucks/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Trucks/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

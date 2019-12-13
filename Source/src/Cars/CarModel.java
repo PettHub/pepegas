@@ -192,6 +192,16 @@ public class CarModel extends Observable {
         }
     }
 
+    void stop(){
+        for (Assoc association : associations) {
+            association.automobile.stopEngine();
+        }
+    }
+    void start(){
+        for (Assoc association : associations) {
+            association.automobile.startEngine();
+        }}
+
     public void setTurboOn() {
         for (Assoc association : associations) {
             association.automobile.setTurboOn();/*
@@ -212,7 +222,8 @@ public class CarModel extends Observable {
 
     public void lowerBed() {
         for (Assoc association : associations) {
-            association.automobile.lowerFlak();/*
+            association.automobile.lowerFlak();
+            /*
             if (association.automobile instanceof Scania) {
                 if (((Scania) association.automobile).flak != null)
                     ((Scania) association.automobile).flak.lowerFlak();
@@ -245,4 +256,6 @@ public class CarModel extends Observable {
     public static int getMapY() {
         return mapY;
     }
+
+
 }
