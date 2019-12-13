@@ -6,4 +6,7 @@ package Trucks;
  */
 public interface IsAttachableToTruck {
     boolean readyForMoving();
+    int getMaxAngle();
+    int getAngle();
+    void setAngle(int i);
 }

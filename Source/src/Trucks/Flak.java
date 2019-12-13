@@ -26,7 +26,7 @@ public class Flak implements IsAttachableToTruck{
         this.maxAngle = maxAngle;
     }
 
-    public void lowerFlak(){
+/*    public void lowerFlak(){
         if (this.currentSpeed == 0) {
             if (angle - 10 < 0) {
                 angle = 0;
@@ -44,17 +44,28 @@ public class Flak implements IsAttachableToTruck{
                 angle += 10;
         }
     }
+*/
+
+    @Override
+    public void setAngle(int angle) {
+        this.angle = angle;
+    }
+
+    @Override
+    public int getMaxAngle() {
+        return this.maxAngle;
+    }
+
+    @Override
+    public int getAngle() {
+        return this.angle;
+    }
 
     public int[] getCoordinates() {
         int[] coordinates = new int[2];
         coordinates[0] = this.x;
         coordinates[1] = this.y;
         return coordinates;
-    }
-    
-
-    protected int getAngle() {
-        return angle;
     }
 
     public int getX() {

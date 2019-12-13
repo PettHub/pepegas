@@ -8,7 +8,7 @@ import java.awt.*;
  * Contains necessary methods to make a Cars.Automobile move (speed up, slow down, turn). Assumes "forward" is up.
  */
 
-public abstract class Automobile implements Movable {
+public abstract class Automobile implements Movable, ICanManipulateFlak, IsTurboable{
 
     public Automobile(int nrDoors, Color color, int enginePower, String modelName) {
         this.nrDoors = nrDoors;
@@ -222,12 +222,27 @@ public abstract class Automobile implements Movable {
         }
     }
 
+    @Override
+    public void lowerFlak() {
+    }
+
+    @Override
+    public void raiseFlak() {
+    }
+
+    @Override
+    public void setTurboOn() {
+    }
+
+    @Override
+    public void setTurboOff() {
+    }
+
     public String getModelName() {
         return modelName;
     }
 
     public void setDirection(double direction) {
         this.direction = direction;
-
 
 }}

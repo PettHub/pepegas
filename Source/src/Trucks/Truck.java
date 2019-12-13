@@ -32,6 +32,24 @@ public abstract class Truck <A extends IsAttachableToTruck> extends Automobile {
         else
             super.move();
     }
+    public void raiseFlak() {
+        if (this.getCurrentSpeed() == 0) {
+            if (this.flak.getAngle() + 10 > this.flak.getMaxAngle()) {
+                this.flak.setAngle(this.flak.getMaxAngle());
+                System.out.println("Max angle");
+            } else
+                this.flak.setAngle(this.flak.getAngle() + 10);
+        }
+    }
+    public void lowerFlak(){
+        if (this.getCurrentSpeed() == 0) {
+            if (this.flak.getAngle() - 10 < 0) {
+                this.flak.setAngle(0);
+                System.out.println("Max angle");
+            } else
+                this.flak.setAngle(this.flak.getAngle() - 10);
+        }
+    }
     void attachFlak(A newFlak){
         this.flak = newFlak;
     }

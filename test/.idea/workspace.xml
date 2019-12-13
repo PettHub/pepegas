@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2f62f5b-aa10-43e5-9c44-6561e2ccdb6b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Source/src/Cars/ICanManipulateFlak.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Source/src/Cars/IsTurboable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/Cars/Automobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/Automobile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Cars/CarModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/Trucks/Flak.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Trucks/Flak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/Trucks/IsAttachableToTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Trucks/IsAttachableToTruck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Source/src/Trucks/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Source/src/Trucks/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
