@@ -19,8 +19,8 @@ public class Widget extends JPanel implements Observer {
     public Widget(CarModel world, CarView frame){
         this.world = world;
         this.frame = frame;
-        this.setForeground(Color.green);
-        this.setBackground(Color.BLACK);
+        //this.setForeground(Color.green);
+        //this.setBackground(Color.BLACK);
         this.setVisible(true);
         frame.add(this);
     }
@@ -31,22 +31,22 @@ public class Widget extends JPanel implements Observer {
         this.add(tmp);
     }
     void updateCars(){
-        PURGE();
         for (int i = 0; i<assocs.size(); i++){
             label.get(i).setText(assocs.get(i).getAutomobile().getModelName() + " : " + Math.round(assocs.get(i).getAutomobile().getCurrentSpeed()));
             this.add(label.get(i));
         }
-        this.setPreferredSize(new Dimension(600, 100));
+        //this.setPreferredSize(new Dimension(600, 100));
     }
 
-    void PURGE() {
+    /*void PURGE() {
         this.removeAll();
-    }
+        System.out.print("DEBOG PURGE()");
+    }*/
 
     @Override
     public void update(Observable o, Object arg) {
-        if (world.associations.size()>0)
-    addCar(world.associations.get(world.associations.size()-1));
-    updateCars();
+        if (world.associations.size()>0){addCar(world.associations.get(world.associations.size()-1));}
+        updateCars();
+        System.out.print("DEBOG UPDATECARS() ");
     }
 }

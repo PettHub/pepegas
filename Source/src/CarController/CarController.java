@@ -90,7 +90,7 @@ public class CarController extends JPanel{
         carList.setVisible(false);
         this.add(carList);
         PURGE.setBackground(Color.RED);
-        PURGE.setForeground(Color.blue);
+        PURGE.setForeground(Color.black);
         PURGE.setPreferredSize(new Dimension(CarModel.getMapX(),100));
         this.add(PURGE);
         // This actionListener is for the gas button only

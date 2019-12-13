@@ -183,6 +183,8 @@ public class CarModel extends Observable {
         for (Assoc association : associations) {
             association.automobile.gas(gas);
         }
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public void brake(int amount) {
@@ -190,6 +192,8 @@ public class CarModel extends Observable {
         for (Assoc association : associations) {
             association.automobile.brake(amount);
         }
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public void setTurboOn() {
@@ -198,6 +202,7 @@ public class CarModel extends Observable {
                 ((Saab95) association.automobile).setTurboOn();
             }
         }
+        
     }
 
     public void setTurboOff() {

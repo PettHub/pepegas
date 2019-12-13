@@ -50,5 +50,6 @@ public class DrawPanel extends JPanel {
         for (Assoc assoc : vehicle){
         g.drawImage(assoc.getBufferedImage(), (int) assoc.getRectangle().getX() , (int) assoc.getRectangle().getY(), null); // see javadoc for more info on the parameters
         }
+
     }
 }
