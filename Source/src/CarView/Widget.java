@@ -11,7 +11,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class Widget extends JPanel implements Observer {
-    List<Assoc> assocs = new ArrayList<>();
     List<JLabel> label = new ArrayList<>();
     CarModel world;
     CarView frame;
@@ -25,27 +24,38 @@ public class Widget extends JPanel implements Observer {
         frame.add(this);
     }
     void addCar(Assoc assoc){
-        assocs.add(assoc);
         JLabel tmp = new JLabel(assoc.getAutomobile().getModelName() + " : " + Math.round(assoc.getAutomobile().getCurrentSpeed()));
         label.add(tmp);
         this.add(tmp);
     }
     void updateCars(){
-        for (int i = 0; i<assocs.size(); i++){
-            label.get(i).setText(assocs.get(i).getAutomobile().getModelName() + " : " + Math.round(assocs.get(i).getAutomobile().getCurrentSpeed()));
-            this.add(label.get(i));
+        for (int i = 0; i<world.associations.size(); i++){
+            label.get(i).setText(world.associations.get(i).getAutomobile().getModelName() + " : " + Math.round(world.associations.get(i).getAutomobile().getCurrentSpeed()));
+            //this.add(label.get(i));
         }
         //this.setPreferredSize(new Dimension(600, 100));
     }
 
-    /*void PURGE() {
-        this.removeAll();
+    void PURGE() {
+        for (JLabel labe : label){
+            this.remove(labe);
+        }
+        while (label.size()>0){
+            label.remove(0);
+        }
+        this.setVisible(false);
         System.out.print("DEBOG PURGE()");
-    }*/
+    }
 
     @Override
     public void update(Observable o, Object arg) {
-        if (world.associations.size()>0){addCar(world.associations.get(world.associations.size()-1));}
+        if (world.associations.size()>this.label.size()){
+            addCar(world.associations.get(world.associations.size()-1));
+            this.setVisible(true);
+        }
+        if (world.associations.size()<this.label.size()){
+            PURGE();
+        }
         updateCars();
         System.out.print("DEBOG UPDATECARS() ");
     }

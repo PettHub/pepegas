@@ -55,7 +55,7 @@ public class CarModel extends Observable {
     void expandAssociations(Assoc assoc){
         associations.add(assoc);
         this.setChanged();
-        this.notifyObservers();
+        this.notifyObservers(assoc);
     }
 
     void moveit(Assoc assoc) {
@@ -77,6 +77,8 @@ public class CarModel extends Observable {
                 this.setChanged();
                 this.notifyObservers();
             }
+            this.setChanged();
+            this.notifyObservers();
             //updateSpeedWidgets();
             //frame.drawPanel.repaint();
 
@@ -196,12 +198,12 @@ public class CarModel extends Observable {
         this.notifyObservers();
     }
 
-    void stop(){
+    public void stop(){
         for (Assoc association : associations) {
             association.automobile.stopEngine();
         }
     }
-    void start(){
+    public void start(){
         for (Assoc association : associations) {
             association.automobile.startEngine();
         }}
